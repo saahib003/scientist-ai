@@ -108,6 +108,18 @@
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+    min-height: 100vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+}
+
+.urban-ai-page .urban-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px !important;
 }
 
 .urban-ai-page .urban-hero-bg {
