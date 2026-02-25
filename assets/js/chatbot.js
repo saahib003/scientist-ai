@@ -4,70 +4,88 @@
 
 // Chatbot Q&A Database
 const chatbotData = {
-    mainQuestions: [
+    greeting: "Hi there! Welcome to Scientist Technologies.<br><br>We are a specialized team of AI and Data Engineers dedicated to turning complex data into actionable intelligence.<br><br>Whether you are looking to build a custom Generative AI agent, scale your Data Engineering, or need a Strategic AI Roadmap, we're here to help you build what's next.",
+    
+    closingMessage: "Thank you! Your inquiry has been received.<br><br>One of our AI Strategists will review your details and reach out within 24 hours to discuss how we can accelerate your AI journey.",
+    
+    questions: [
         {
-            id: 'services',
-            question: 'What services do you provide?',
-            answer: 'We offer AI Products (Urban AI), AI & Data Staffing, and Consulting services.',
-            followUps: ['industries', 'custom-ai']
+            id: 'what-do',
+            question: 'What does Scientist Technologies do?',
+            keywords: ['what', 'do', 'does', 'company', 'about', 'services', 'business'],
+            answer: 'Scientist Technologies is a specialized AI and Data Engineering firm.<br><br>We help businesses navigate the complexities of Artificial Intelligence—from initial strategy and consulting to building and deploying production-ready AI models.',
+            followUps: ['offerings', 'expertise']
         },
         {
-            id: 'urban-ai',
-            question: 'What is Urban AI?',
-            answer: 'Urban AI is a smart system that uses traffic cameras to automatically watch and analyze how cars and people move. It spots "near-miss" accidents and dangerous patterns in real-time so cities can fix roads before a crash happens. It basically replaces manual traffic monitoring with clever data to make streets much safer and less chaotic.',
-            followUps: ['demo']
+            id: 'offerings',
+            question: 'What are your key offerings within AI Consulting?',
+            keywords: ['offerings', 'consulting', 'services', 'provide', 'offer'],
+            answer: '<strong>Our AI Consulting Services:</strong><br><br><ul><li><strong>Opportunity Validation</strong> – Identifying high-value use cases</li><li><strong>AI Architecture & Strategy</strong> – Designing scalable AI systems</li><li><strong>Prototype to Production</strong> – Taking POCs to full-scale deployment</li><li><strong>Algorithm Research</strong> – Solving niche technical problems</li></ul>',
+            followUps: ['expertise', 'tech-stack']
         },
         {
-            id: 'ai-developers',
-            question: 'Do you provide AI developers on contract?',
-            answer: 'Yes, we provide skilled AI and Data Engineers based on your project requirements.',
-            followUps: ['deployment-time']
+            id: 'expertise',
+            question: 'Which are your areas of expertise?',
+            keywords: ['expertise', 'specialize', 'areas', 'focus', 'skills'],
+            answer: '<strong>Our Core Expertise:</strong><br><br><ul><li><strong>Generative AI</strong> – LLMs & RAG systems</li><li><strong>Natural Language Processing (NLP)</strong> – Text analysis & understanding</li><li><strong>Computer Vision</strong> – Image & video analytics</li><li><strong>Big Data Engineering</strong> – Scalable data pipelines</li></ul>',
+            followUps: ['nlp', 'gen-ai']
         },
         {
-            id: 'custom-ai',
-            question: 'Do you provide custom AI solutions?',
-            answer: 'Yes, we design and develop custom AI models based on your business challenges.',
-            followUps: ['project-start']
+            id: 'tech-stack',
+            question: 'What is your engineers\' tech stack?',
+            keywords: ['tech', 'stack', 'technology', 'tools', 'frameworks', 'languages'],
+            answer: '<strong>Our Technology Stack:</strong><br><br><strong>Languages:</strong> Python, R, Scala<br><br><strong>Frameworks:</strong> PyTorch, TensorFlow, Hugging Face<br><br><strong>Cloud Platforms:</strong><ul><li>AWS (SageMaker)</li><li>Azure (ML Studio)</li><li>Google Cloud (Vertex AI)</li></ul>',
+            followUps: ['integration', 'engagement']
         },
         {
-            id: 'data-security',
-            question: 'How do you ensure data security?',
-            answer: 'We follow strict data protection policies and secure development practices.',
-            followUps: ['partner']
+            id: 'nlp',
+            question: 'Do you offer NLP solutions?',
+            keywords: ['nlp', 'natural language', 'text', 'language processing', 'sentiment'],
+            answer: 'Yes. NLP is a core pillar of our expertise.<br><br><strong>Our NLP Solutions:</strong><br><br><ul><li>Automated document processing</li><li>Sentiment analysis</li><li>Entity extraction</li><li>Custom translation layers</li></ul>',
+            followUps: ['chatbot', 'integration']
+        },
+        {
+            id: 'integration',
+            question: 'Can you integrate AI into existing systems?',
+            keywords: ['integrate', 'integration', 'existing', 'systems', 'crm', 'erp', 'api'],
+            answer: 'Absolutely. We specialize in <strong>AI Module Integration</strong>.<br><br>We ensure models connect seamlessly into your existing systems:<br><br><ul><li>CRMs</li><li>ERPs</li><li>Custom applications</li></ul><br>All integrated via robust APIs for smooth operation.',
+            followUps: ['engagement', 'partner']
+        },
+        {
+            id: 'gen-ai',
+            question: 'Do you have experience in Gen AI?',
+            keywords: ['gen ai', 'generative', 'llm', 'gpt', 'language model', 'rag'],
+            answer: 'Yes. We focus on building custom Generative AI solutions.<br><br><strong>Our Gen AI Capabilities:</strong><br><br><ul><li>Custom LLM implementations</li><li>Fine-tuning models for industry-specific jargon</li><li>Private AI-driven search tools</li><li>RAG (Retrieval-Augmented Generation) systems</li></ul>',
+            followUps: ['chatbot', 'offerings']
+        },
+        {
+            id: 'chatbot',
+            question: 'Can you help build a Chatbot or AI Agent?',
+            keywords: ['chatbot', 'agent', 'agentic', 'bot', 'conversational'],
+            answer: 'Yes. We build <strong>"Agentic AI"</strong>—chatbots that don\'t just talk but also act.<br><br><strong>Our AI Agents can:</strong><br><br><ul><li>Negotiate and make decisions</li><li>Predict timelines and outcomes</li><li>Query private databases</li><li>Execute complex workflows</li></ul>',
+            followUps: ['engagement', 'partner']
+        },
+        {
+            id: 'engagement',
+            question: 'What kind of engagement model do you adopt?',
+            keywords: ['engagement', 'model', 'pricing', 'contract', 'hire', 'cost'],
+            answer: '<strong>Our Engagement Models:</strong><br><br><ol><li><strong>Project-Based</strong> – Fixed-scope deliverables</li><li><strong>Dedicated AI Teams</strong> – Managed specialists for ongoing work</li><li><strong>Strategic Consulting</strong> – Hourly or retainer-based advisory</li></ol>',
+            followUps: ['partner', 'demo']
         },
         {
             id: 'partner',
-            question: 'How can we partner with you?',
-            answer: 'You can contact us via our website at <a href="mailto:contact@scientisttechnologies.uk">contact@scientisttechnologies.uk</a>, and our team will schedule a consultation call.',
+            question: 'How do we partner with you?',
+            keywords: ['partner', 'work', 'start', 'process', 'onboard', 'contact'],
+            answer: '<strong>Our Partnership Process:</strong><br><br><ol><li><strong>Initial Inquiry</strong> – Reach out via our website or email</li><li><strong>Discovery Call</strong> – Discuss your needs and data readiness</li><li><strong>Detailed Proposal</strong> – Receive a customized solution roadmap</li><li><strong>Onboarding & Development</strong> – Begin building together</li></ol>',
+            followUps: ['demo']
+        },
+        {
+            id: 'demo',
+            question: 'Can we do a demo or discovery call?',
+            keywords: ['demo', 'call', 'meeting', 'schedule', 'discovery', 'consultation'],
+            answer: 'Yes. We\'d be happy to schedule a call with you.<br><br><strong>Contact us:</strong><br><br>📧 Email: <a href="mailto:team@scientisttechnologies.com">team@scientisttechnologies.com</a><br><br>🌐 Website: Schedule directly through our contact page',
             followUps: []
         }
-    ],
-    followUpQuestions: {
-        'industries': {
-            question: 'Which industries do you serve?',
-            answer: 'Retail, Mobility, Smart Cities, and enterprise AI solutions etc.',
-            followUps: ['custom-ai', 'partner']
-        },
-        'demo': {
-            question: 'Can I request a demo?',
-            answer: 'Yes, we can schedule a live demo based on your business needs.',
-            followUps: ['partner']
-        },
-        'deployment-time': {
-            question: 'How quickly can resources be deployed?',
-            answer: 'Depending on availability, within 1–3 weeks.',
-            followUps: ['partner']
-        },
-        'project-start': {
-            question: 'How do you start a project?',
-            answer: 'We begin with a consultation call to understand your problem and suggest a solution roadmap.',
-            followUps: ['partner']
-        }
-    },
-    closingMessages: [
-        'Would you like to speak to our team?',
-        'Would you like to schedule a demo?',
-        'Please share your email and requirement at <a href="mailto:contact@scientisttechnologies.uk">contact@scientisttechnologies.uk</a>'
     ]
 };
 
@@ -182,10 +200,13 @@ class Chatbot {
     showWelcomeMessage() {
         const welcomeMsg = {
             type: 'bot',
-            text: 'Hello! 👋 I\'m here to help you learn more about Scientist Technologies. How can I assist you today?'
+            text: chatbotData.greeting
         };
         this.addMessage(welcomeMsg);
-        this.showQuickQuestions(chatbotData.mainQuestions.map(q => q.id));
+        
+        // Show first 4 main questions as quick buttons
+        const mainQuestionIds = chatbotData.questions.slice(0, 4).map(q => q.id);
+        this.showQuickQuestions(mainQuestionIds);
     }
 
     showQuickQuestions(questionIds) {
@@ -212,9 +233,7 @@ class Chatbot {
     }
 
     getQuestionById(id) {
-        const mainQ = chatbotData.mainQuestions.find(q => q.id === id);
-        if (mainQ) return mainQ;
-        return chatbotData.followUpQuestions[id];
+        return chatbotData.questions.find(q => q.id === id);
     }
 
     handleQuickQuestion(questionId) {
@@ -236,7 +255,7 @@ class Chatbot {
             // Show follow-ups or closing message
             if (questionData.followUps && questionData.followUps.length > 0) {
                 setTimeout(() => this.showQuickQuestions(questionData.followUps), 500);
-            } else if (this.messageCount >= 2) {
+            } else {
                 setTimeout(() => this.showClosingMessage(), 500);
             }
         }, 800);
@@ -247,11 +266,15 @@ class Chatbot {
         const userMessage = input.value.trim();
         if (!userMessage) return;
 
+        // Remove any existing quick questions
+        const quickQuestions = document.querySelector('.chatbot-quick-questions');
+        if (quickQuestions) quickQuestions.remove();
+
         // Add user message
         this.addMessage({ type: 'user', text: userMessage });
         input.value = '';
 
-        // Simple keyword matching for custom questions
+        // Smart keyword matching for custom questions
         setTimeout(() => {
             const response = this.matchQuestion(userMessage);
             this.addMessage({ type: 'bot', text: response.answer });
@@ -259,7 +282,7 @@ class Chatbot {
 
             if (response.followUps && response.followUps.length > 0) {
                 setTimeout(() => this.showQuickQuestions(response.followUps), 500);
-            } else if (this.messageCount >= 2) {
+            } else {
                 setTimeout(() => this.showClosingMessage(), 500);
             }
         }, 800);
@@ -267,35 +290,49 @@ class Chatbot {
 
     matchQuestion(userInput) {
         const input = userInput.toLowerCase();
+        let bestMatch = null;
+        let highestScore = 0;
         
-        // Check main questions
-        for (const q of chatbotData.mainQuestions) {
-            if (input.includes(q.id.replace('-', ' ')) || 
-                q.question.toLowerCase().includes(input) ||
-                input.includes(q.question.toLowerCase().split(' ')[0])) {
-                return q;
+        // Score each question based on keyword matches
+        for (const q of chatbotData.questions) {
+            let score = 0;
+            
+            // Check if any keywords match
+            for (const keyword of q.keywords) {
+                if (input.includes(keyword)) {
+                    score += 2; // Keyword match
+                }
+            }
+            
+            // Check if question text matches
+            const questionWords = q.question.toLowerCase().split(' ');
+            for (const word of questionWords) {
+                if (word.length > 3 && input.includes(word)) {
+                    score += 1; // Question word match
+                }
+            }
+            
+            // Update best match
+            if (score > highestScore) {
+                highestScore = score;
+                bestMatch = q;
             }
         }
 
-        // Check follow-up questions
-        for (const key in chatbotData.followUpQuestions) {
-            const q = chatbotData.followUpQuestions[key];
-            if (input.includes(key.replace('-', ' ')) || 
-                q.question.toLowerCase().includes(input)) {
-                return q;
-            }
+        // Return best match if score is good enough, otherwise fallback
+        if (bestMatch && highestScore >= 2) {
+            return bestMatch;
         }
 
         // Fallback response
         return {
-            answer: 'Thank you for your question! For detailed information, please contact us at <a href="mailto:contact@scientisttechnologies.uk">contact@scientisttechnologies.uk</a> or explore our <a href="services.html">Services</a> page.',
-            followUps: ['partner']
+            answer: 'Thank you for your question! For detailed information, please contact us at <a href="mailto:team@scientisttechnologies.com">team@scientisttechnologies.com</a> or explore our <a href="services.html">Services</a> page.',
+            followUps: ['partner', 'demo']
         };
     }
 
     showClosingMessage() {
-        const randomMessage = chatbotData.closingMessages[Math.floor(Math.random() * chatbotData.closingMessages.length)];
-        this.addMessage({ type: 'bot', text: randomMessage });
+        this.addMessage({ type: 'bot', text: chatbotData.closingMessage });
     }
 
     addMessage(message) {

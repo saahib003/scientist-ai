@@ -55,7 +55,7 @@
     <a href="about.html" class="nav-link">About</a>
     <a href="services.html" class="nav-link">Services</a>
     <a href="projects.html" class="nav-link">Projects</a>
-    <a href="products.html" class="nav-link">Products</a>
+    <a href="urban-ai.html" class="nav-link">Products</a>
     <a href="team.html" class="nav-link ">Team</a>
     <a href="contact.html" class="nav-link active">Contact</a>
 </nav>
@@ -84,7 +84,7 @@
             <a href="about.html" class="mobile-nav-link">About</a>
             <a href="services.html" class="mobile-nav-link">Services</a>
             <a href="projects.html" class="mobile-nav-link">Projects</a>
-            <a href="products.html" class="mobile-nav-link">Products</a>
+            <a href="urban-ai.html" class="mobile-nav-link">Products</a>
             <a href="team.html" class="mobile-nav-link">Team</a>
             <a href="contact.html" class="mobile-nav-link">Contact</a>
         </nav>
@@ -109,7 +109,7 @@
                 </div>
                 <h1 class="hero-title animate-on-scroll">
                     <span class="title-line">Let's Build</span>
-                    <span class="title-line gradient-text">Something Amazing</span>
+                    <span class="title-line">Something Amazing</span>
                     <span class="title-line">Together</span>
                 </h1>
                 <p class="hero-subtitle animate-on-scroll">
@@ -236,10 +236,21 @@
                             </div>
 
                             <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone (optional)">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="company" name="company" placeholder="Company (optional)">
+                            </div>
+
+                            <div class="form-group">
                                 <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span class="btn-text">Submit</span>
+                                <span class="btn-loader"></span>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -294,6 +305,11 @@
 
     <!-- AI Chatbot (Only on Contact Page) -->
     
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Contact Form Handler -->
+    <script src="assets/js/contact-form.js"></script>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/chatbot.js"></script>

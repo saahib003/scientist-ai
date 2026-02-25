@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban AI - Safety and Security for Everyone | Scientist Technologies</title>
+    <meta name="description" content="Urban AI provides AI-powered surveillance and analytics for safer communities across schools, roads, hospitals, and residential areas.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/avif" href="assets/images/icons/company-logo.avif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/urban-ai.css">
+    <link rel="stylesheet" href="assets/css/urban-ai-product.css">
+</head>
+
+<body class="urban-ai-page">
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" id="navLogo">
+                <img src="assets/images/icons/company-logo.avif" alt="Scientist Technologies Logo" class="logo-img">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="urban-ai.html" class="nav-link active">Products</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-toggle-track">
+                        <span class="theme-toggle-icon sun">☀️</span>
+                        <span class="theme-toggle-icon moon">🌙</span>
+                        <span class="theme-toggle-thumb"></span>
+                    </span>
+                </button> -->
+                <button class="nav-cta" id="navCta">Get Started</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="projects.html" class="mobile-nav-link">Projects</a>
+            <a href="urban-ai.html" class="mobile-nav-link">Products</a>
+            <a href="team.html" class="mobile-nav-link">Team</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="urban-hero">
+            <div class="urban-hero-bg">
+                <img src="assets/urban-ai-assets/background-image.avif" alt="Urban AI Background" class="urban-hero-bg-img">
+                <div class="urban-hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="urban-hero-content">
+                    <div class="urban-hero-logo-container">
+                        <img src="assets/urban-ai-assets/icons/urban ai logo.avif" alt="Urban AI" class="urban-hero-logo">
+                    </div>
+                    <h2 class="urban-hero-subtitle">Safety and Security for Everyone</h2>
+                    <p class="urban-hero-description">
+                        AI-powered surveillance and analytics transforming safety across schools, roads, hospitals, and communities
+                    </p>
+                    <div class="urban-hero-cta">
+                        <a href="#contact-section" class="urban-btn urban-btn-primary">Request Demo</a>
+                        <a href="#how-it-works" class="urban-btn urban-btn-ghost">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="urban-stats">
+            <div class="container">
+                <div class="urban-stats-grid">
+                    <div class="urban-stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Active Deployments</div>
+                    </div>
+                    <div class="urban-stat-card">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Hours Monitored</div>
+                    </div>
+                    <div class="urban-stat-card">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Incidents Prevented</div>
+                    </div>
+                    <div class="urban-stat-card">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Accuracy Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="urban-features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Comprehensive Safety Features</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card slide-up">
+                        <div class="feature-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3>Real-Time Monitoring</h3>
+                        <p>24/7 surveillance with instant threat detection and response</p>
+                    </div>
+                    <div class="feature-card slide-up">
+                        <div class="feature-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Predictive Analytics</h3>
+                        <p>AI-powered predictions to prevent incidents before they occur</p>
+                    </div>
+                    <div class="feature-card slide-up">
+                        <div class="feature-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Instant Alerts</h3>
+                        <p>Multi-channel notifications via SMS, email, and mobile app</p>
+                    </div>
+                    <div class="feature-card slide-up">
+                        <div class="feature-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h3>Secure Data Storage</h3>
+                        <p>Encrypted cloud storage with customizable retention policies</p>
+                    </div>
+                    <div class="feature-card slide-up">
+                        <div class="feature-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Detailed reports and insights for data-driven decisions</p>
+                    </div>
+                    <div class="feature-card slide-up">
+                        <div class="feature-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3>Easy Integration</h3>
+                        <p>Works with existing camera infrastructure and systems</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sector Applications -->
+        <section class="urban-sectors">
+            <div class="container">
+                <h2 class="urban-section-title">Safety Across All Sectors</h2>
+                <p class="sectors-intro">
+                    Urban AI provides comprehensive safety and security solutions tailored for diverse environments. From educational institutions to healthcare facilities, our AI-powered surveillance ensures protection where it matters most.
+                </p>
+
+                <!-- Card 1: Schools - Left Content, Right Video -->
+                <div class="sector-card slide-from-left">
+                    <div class="sector-content">
+                        <div class="sector-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                <path d="M9 6h6"></path>
+                                <path d="M9 9h6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="sector-title">Schools & Educational Institutions</h3>
+                        <p class="sector-description">
+                            Ensure student safety with intelligent monitoring systems that detect unauthorized entries, monitor playground activities, and provide instant alerts during emergencies.
+                        </p>
+                        <ul class="sector-features">
+                            <li>Unauthorized entry detection</li>
+                            <li>Student attendance tracking</li>
+                            <li>Emergency response alerts</li>
+                            <li>Playground safety monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="sector-media">
+                        <div class="video-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            <p>School Safety Video</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Roads - Right Content, Left Video -->
+                <div class="sector-card sector-card-reverse slide-from-right">
+                    <div class="sector-media">
+                        <video class="sector-video" autoplay loop muted playsinline>
+                            <source src="assets/videos/converted_0002_10-16_processed_video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="sector-content">
+                        <div class="sector-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                <path d="M8 3h8"></path>
+                                <path d="M3 8h18"></path>
+                            </svg>
+                        </div>
+                        <h3 class="sector-title">Roads & Traffic Management</h3>
+                        <p class="sector-description">
+                            Advanced traffic analysis detecting near-miss incidents, monitoring traffic flow, and preventing accidents before they happen with predictive AI.
+                        </p>
+                        <ul class="sector-features">
+                            <li>Near-miss accident detection</li>
+                            <li>Traffic flow optimization</li>
+                            <li>Violation detection & alerts</li>
+                            <li>Predictive accident prevention</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: Residential - Left Content, Right Video -->
+                <div class="sector-card slide-from-left">
+                    
+                    <div class="sector-content">
+                        <div class="sector-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                <circle cx="12" cy="8" r="1"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="sector-title">Residential Societies & Communities</h3>
+                        <p class="sector-description">
+                            Comprehensive security for residential areas with perimeter monitoring, visitor management, and 24/7 surveillance for peace of mind.
+                        </p>
+                        <ul class="sector-features">
+                            <li>Perimeter security monitoring</li>
+                            <li>Visitor management system</li>
+                            <li>Suspicious activity detection</li>
+                            <li>Package delivery tracking</li>
+                        </ul>
+                    </div>
+                    <div class="sector-media">
+                        <div class="video-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            <p>Community Safety Video</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Hospitals - Right Content, Left Video -->
+                <div class="sector-card sector-card-reverse slide-from-right">
+                    <div class="sector-media">
+                        <div class="video-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            <p>Healthcare Safety Video</p>
+                        </div>
+                    </div>
+                    <div class="sector-content">
+                        <div class="sector-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <path d="M12 2v4"></path>
+                                <path d="M12 18v4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="sector-title">Hospitals & Healthcare Facilities</h3>
+                        <p class="sector-description">
+                            Patient safety monitoring, restricted area access control, and emergency detection systems designed for healthcare environments.
+                        </p>
+                        <ul class="sector-features">
+                            <li>Patient safety monitoring</li>
+                            <li>Restricted area access control</li>
+                            <li>Emergency detection & alerts</li>
+                            <li>Staff & visitor tracking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 5: Commercial - Left Content, Right Video -->
+                <div class="sector-card slide-from-left">
+                    <div class="sector-content">
+                        <div class="sector-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="sector-title">Commercial & Retail Spaces</h3>
+                        <p class="sector-description">
+                            Smart surveillance for retail and commercial spaces with crowd management, theft prevention, and customer safety analytics.
+                        </p>
+                        <ul class="sector-features">
+                            <li>Crowd density monitoring</li>
+                            <li>Theft & shoplifting detection</li>
+                            <li>Customer behavior analytics</li>
+                            <li>Emergency evacuation support</li>
+                        </ul>
+                    </div>
+                    <div class="sector-media">
+                        <div class="video-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            <p>Retail Safety Video</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="urban-how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">How it Works</h2>
+                </div>
+                <div class="how-it-works-grid">
+                    <div class="how-step">
+                        <div class="step-icon">
+                            <img src="assets/urban-ai-assets/icons/camera.avif" alt="Camera Integration" />
+                        </div>
+                        <h3>Camera Integration</h3>
+                        <p>Connect existing CCTV cameras or install new AI-enabled cameras</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="step-icon">
+                            <img src="assets/urban-ai-assets/icons/Ai.avif" alt="AI Analysis" />
+                        </div>
+                        <h3>AI Analysis</h3>
+                        <p>Real-time video analysis using advanced computer vision algorithms</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="step-icon">
+                            <img src="assets/urban-ai-assets/icons/timer-image.avif" alt="Instant Alerts" />
+                        </div>
+                        <h3>Instant Alerts</h3>
+                        <p>Automated alerts sent to security teams for immediate action</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="step-icon">
+                            <img src="assets/urban-ai-assets/icons/brain-confusion.avif" alt="Continuous Learning" />
+                        </div>
+                        <h3>Continuous Learning</h3>
+                        <p>AI models improve over time, adapting to your specific environment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+          
+
+        <!-- Deployment Map -->
+        <section class="urban-map-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Urban AI Deployments</h2>
+                    <p class="section-subtitle">Protecting communities across multiple cities and sectors</p>
+                </div>
+                <div id="deploymentMap" class="deployment-map"></div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="urban-cta" id="contact-section">
+            <div class="container">
+                <div class="urban-cta-content">
+                    <h2>Ready to Make Your Space Safer?</h2>
+                    <p>Get in touch with our team to schedule a demo and see Urban AI in action</p>
+                    <div class="urban-cta-buttons">
+                        <a href="contact.html" class="urban-btn urban-btn-primary">Contact Us</a>
+                        <a href="http://www.geturbanai.com" target="_blank" class="urban-btn urban-btn-ghost">Visit Urban AI Website</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <img src="assets/images/icons/company-logo.avif" alt="Scientist Technologies Logo"
+                            class="logo-img">
+                    </a>
+                    <p class="footer-tagline">Pioneering AI solutions since 2016. Building a smarter future, one
+                        algorithm at a time.</p>
+                </div>
+                <div class="footer-links-grid">
+                    <div class="footer-col">
+                        <h4>Solutions</h4>
+                        <a href="services.html">Machine Learning</a>
+                        <a href="services.html">Natural Language Processing</a>
+                        <a href="services.html">Computer Vision</a>
+                        <a href="services.html">AI Deployment</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="team.html">Team</a>
+                        <a href="#">Blog</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="#">Case Studies</a>
+                        <a href="#">Documentation</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2016–2026 Scientist Technologies.uk — All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/urban-ai.js"></script>
+</body>
+
+</html>
