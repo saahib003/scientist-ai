@@ -71,17 +71,20 @@ function initThemeToggle() {
     // Apply initial theme
     if (currentTheme === 'light') {
         root.setAttribute('data-theme', 'light');
-        toggleBtn.classList.add('light');
+        if (toggleBtn) toggleBtn.classList.add('light');
     }
 
-    toggleBtn.addEventListener('click', () => {
-        const isLight = root.getAttribute('data-theme') === 'light';
-        const newTheme = isLight ? 'dark' : 'light';
+    // Add event listener
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const isLight = root.getAttribute('data-theme') === 'light';
+            const newTheme = isLight ? 'dark' : 'light';
 
-        root.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        toggleBtn.classList.toggle('light');
-    });
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            toggleBtn.classList.toggle('light');
+        });
+    }
 }
 
 /* ================================================

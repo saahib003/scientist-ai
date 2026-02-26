@@ -43,7 +43,10 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(54, 196, 183, 0.1);
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
 }
 
@@ -53,13 +56,48 @@
     z-index: 1000;
 }
 
+/* Logo white on products page */
+.urban-ai-page .logo-img {
+    filter: brightness(0) invert(1) !important;
+}
+
+.urban-ai-page .logo-text {
+    color: var(--urban-white) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--urban-white) !important;
+}
+
+/* Mobile hamburger menu white on products page */
+.urban-ai-page .mobile-menu-btn span {
+    background: var(--urban-white) !important;
+}
+
 .urban-ai-page .nav-link {
-    color: var(--urban-white);
+    color: var(--urban-white) !important;
 }
 
 .urban-ai-page .nav-link:hover,
 .urban-ai-page .nav-link.active {
     color: var(--urban-coral) !important;
+}
+
+/* Keep navbar content white when scrolled */
+.urban-ai-page .navbar.scrolled .logo-img {
+    filter: brightness(0) invert(1) !important;
+}
+
+.urban-ai-page .navbar.scrolled .logo-text {
+    color: var(--urban-white) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--urban-white) !important;
+}
+
+.urban-ai-page .navbar.scrolled .nav-link {
+    color: var(--urban-white) !important;
+}
+
+.urban-ai-page .navbar.scrolled .mobile-menu-btn span {
+    background: var(--urban-white) !important;
 }
 
 .urban-ai-page .nav-link:hover::after,
@@ -1153,6 +1191,17 @@
     border-top: 1px solid rgba(54, 196, 183, 0.1);
 }
 
+/* Footer logo white on products page */
+.urban-ai-page .footer .logo-img {
+    filter: brightness(0) invert(1);
+}
+
+.urban-ai-page .footer .logo-text {
+    color: var(--urban-white);
+    background: none;
+    -webkit-text-fill-color: var(--urban-white);
+}
+
 .urban-ai-page .footer-tagline {
     color: rgba(255, 255, 255, 0.7);
 }
@@ -1467,4 +1516,46 @@
 .urban-ai-page .sector-card:nth-of-type(2) .sector-media {
     aspect-ratio: 16 / 9;
     background: #000;
+}
+
+
+/* ================================================
+   LIGHT THEME OVERRIDES FOR URBAN AI PAGE NAVBAR
+   ================================================ */
+
+/* Keep navbar content white in light theme */
+[data-theme="light"] .urban-ai-page .logo-img {
+    filter: brightness(0) invert(1) !important;
+}
+
+[data-theme="light"] .urban-ai-page .logo-text {
+    color: var(--urban-white) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .nav-link {
+    color: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .navbar.scrolled .logo-img {
+    filter: brightness(0) invert(1) !important;
+}
+
+[data-theme="light"] .urban-ai-page .navbar.scrolled .logo-text {
+    color: var(--urban-white) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .navbar.scrolled .nav-link {
+    color: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .mobile-menu-btn span {
+    background: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .navbar.scrolled .mobile-menu-btn span {
+    background: var(--urban-white) !important;
 }
