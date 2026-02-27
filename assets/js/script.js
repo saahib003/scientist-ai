@@ -58,31 +58,166 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ================================================
-   THEME TOGGLE
+   THEME TOGGLE WITH AMBIENT LIGHT DETECTION
    ================================================ */
 function initThemeToggle() {
     const toggleBtn = document.getElementById('themeToggle');
     const root = document.documentElement;
     const storedTheme = localStorage.getItem('theme');
+    const storedManualOverride = localStorage.getItem('themeManualOverride');
 
-    // Default to dark theme if no stored preference
-    const currentTheme = storedTheme || 'dark';
+    let autoDetectionActive = storedManualOverride !== 'true';
 
-    // Apply initial theme
-    if (currentTheme === 'light') {
-        root.setAttribute('data-theme', 'light');
-        if (toggleBtn) toggleBtn.classList.add('light');
+    // Function to apply theme
+    function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        if (toggleBtn) {
+            if (theme === 'light') {
+                toggleBtn.classList.add('light');
+            } else {
+                toggleBtn.classList.remove('light');
+            }
+        }
     }
 
-    // Add event listener
+    // Function to get system preference
+    function getSystemTheme() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+        return 'light';
+    }
+
+    // Function to get time-based theme (day/night)
+    function getTimeBasedTheme() {
+        const hour = new Date().getHours();
+        // Dark mode between 6 PM (18:00) and 6 AM (6:00)
+        return (hour >= 18 || hour < 6) ? 'dark' : 'light';
+    }
+
+    // Ambient Light Sensor Detection (if available)
+    function initAmbientLightSensor() {
+        if ('AmbientLightSensor' in window) {
+            try {
+                const sensor = new AmbientLightSensor();
+                sensor.addEventListener('reading', () => {
+                    if (!autoDetectionActive) return;
+                    
+                    // illuminance in lux
+                    // < 50 lux = dark environment → light theme (for visibility)
+                    // > 50 lux = bright environment → dark theme (reduce glare)
+                    const theme = sensor.illuminance < 50 ? 'light' : 'dark';
+                    applyTheme(theme);
+                });
+                sensor.start();
+                return true;
+            } catch (error) {
+                console.log('Ambient Light Sensor not available:', error);
+                return false;
+            }
+        }
+        return false;
+    }
+
+    // Camera-based light detection (fallback)
+    async function initCameraLightDetection() {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ 
+                video: { facingMode: 'user' } 
+            });
+            
+            const video = document.createElement('video');
+            video.srcObject = stream;
+            video.play();
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Check light level every 5 seconds
+            setInterval(() => {
+                if (!autoDetectionActive) return;
+
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                ctx.drawImage(video, 0, 0);
+
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+                let brightness = 0;
+
+                // Calculate average brightness
+                for (let i = 0; i < data.length; i += 4) {
+                    brightness += (data[i] + data[i + 1] + data[i + 2]) / 3;
+                }
+                brightness = brightness / (data.length / 4);
+
+                // < 80 = dark → light theme, > 80 = bright → dark theme
+                const theme = brightness < 80 ? 'light' : 'dark';
+                applyTheme(theme);
+            }, 5000);
+
+            return true;
+        } catch (error) {
+            console.log('Camera access denied or not available');
+            return false;
+        }
+    }
+
+    // Initialize detection
+    async function initAutoDetection() {
+        if (!autoDetectionActive) return;
+
+        // Try Ambient Light Sensor first
+        const sensorAvailable = initAmbientLightSensor();
+        
+        if (!sensorAvailable) {
+            // Fallback to time-based detection
+            const timeTheme = getTimeBasedTheme();
+            applyTheme(timeTheme);
+
+            // Update every hour
+            setInterval(() => {
+                if (autoDetectionActive) {
+                    const theme = getTimeBasedTheme();
+                    applyTheme(theme);
+                }
+            }, 3600000); // 1 hour
+        }
+    }
+
+    // Determine initial theme
+    let currentTheme;
+    if (storedManualOverride === 'true') {
+        currentTheme = storedTheme || 'dark';
+        applyTheme(currentTheme);
+    } else {
+        // Start with system preference, then auto-detect
+        currentTheme = getSystemTheme();
+        applyTheme(currentTheme);
+        initAutoDetection();
+    }
+
+    // Listen for system theme changes
+    if (window.matchMedia) {
+        const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkModeQuery.addEventListener('change', (e) => {
+            if (autoDetectionActive) {
+                const newTheme = e.matches ? 'dark' : 'light';
+                applyTheme(newTheme);
+            }
+        });
+    }
+
+    // Manual toggle - disables auto detection
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
             const isLight = root.getAttribute('data-theme') === 'light';
             const newTheme = isLight ? 'dark' : 'light';
 
-            root.setAttribute('data-theme', newTheme);
+            autoDetectionActive = false; // Disable auto detection
+            applyTheme(newTheme);
             localStorage.setItem('theme', newTheme);
-            toggleBtn.classList.toggle('light');
+            localStorage.setItem('themeManualOverride', 'true');
         });
     }
 }
@@ -149,11 +284,11 @@ function initParticles() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             
-            // Light theme: teal particles matching theme color
+            // Light theme: subtle grey/black particles matching professional theme
             // Dark theme: lighter, glowing teal/purple colors
             if (isLightTheme) {
-                // Use teal color for light theme
-                ctx.fillStyle = `rgba(21, 194, 177, ${this.opacity * 2.5})`;
+                // Use subtle grey/black for light theme
+                ctx.fillStyle = `rgba(0, 0, 0, ${this.opacity * 1.5})`;
             } else {
                 ctx.fillStyle = `hsla(${this.hue}, 80%, 65%, ${this.opacity})`;
             }
@@ -181,16 +316,16 @@ function initParticles() {
 
                 if (dist < 150) {
                     const baseOpacity = (1 - dist / 150);
-                    // Light theme: teal color matching theme with high opacity
+                    // Light theme: subtle grey/black - just slightly visible
                     // Dark theme: lighter teal/cyan with lower opacity
-                    const opacity = isLightTheme ? baseOpacity * 0.5 : baseOpacity * 0.15;
-                    const color = isLightTheme ? `rgba(21, 194, 177, ${opacity})` : `rgba(0, 245, 212, ${opacity})`;
+                    const opacity = isLightTheme ? baseOpacity * 0.15 : baseOpacity * 0.15;
+                    const color = isLightTheme ? `rgba(0, 0, 0, ${opacity})` : `rgba(0, 245, 212, ${opacity})`;
                     
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
                     ctx.strokeStyle = color;
-                    ctx.lineWidth = isLightTheme ? 1.5 : 0.5;
+                    ctx.lineWidth = isLightTheme ? 0.6 : 0.5;
                     ctx.stroke();
                 }
             }
@@ -1824,24 +1959,29 @@ initCaseStudyDynamic();
    TECHNOLOGY LOGO CAROUSEL ROTATION
    ================================================ */
 function initTechLogoCarousel() {
-    const sets = document.querySelectorAll('.tech-logos-set');
-    if (sets.length === 0) return;
+    // Only target marquee sections WITHOUT the .company class
+    const carouselSections = document.querySelectorAll('.marquee-section:not(.company)');
     
-    let currentIndex = 0;
-    
-    function rotateSets() {
-        // Remove active class from current set
-        sets[currentIndex].classList.remove('active');
+    carouselSections.forEach(section => {
+        const sets = section.querySelectorAll('.tech-logos-set');
+        if (sets.length === 0) return;
         
-        // Move to next set
-        currentIndex = (currentIndex + 1) % sets.length;
+        let currentIndex = 0;
         
-        // Add active class to new set
-        sets[currentIndex].classList.add('active');
-    }
-    
-    // Rotate every 4 seconds
-    setInterval(rotateSets, 4000);
+        function rotateSets() {
+            // Remove active class from current set
+            sets[currentIndex].classList.remove('active');
+            
+            // Move to next set
+            currentIndex = (currentIndex + 1) % sets.length;
+            
+            // Add active class to new set
+            sets[currentIndex].classList.add('active');
+        }
+        
+        // Rotate every 8 seconds (slower for smoother experience)
+        setInterval(rotateSets, 8000);
+    });
 }
 
 // Initialize on page load
@@ -1859,3 +1999,17 @@ links.forEach(link => {
     }
 });
 
+
+
+// ---- Seamless Logo Marquee ----
+function initLogoMarquee() {
+    const track = document.getElementById('logoTrack');
+    if (!track) return;
+    
+    // Clone all logos and append to create seamless loop
+    const logos = track.innerHTML;
+    track.innerHTML = logos + logos;
+}
+
+// Initialize marquee on load
+initLogoMarquee();

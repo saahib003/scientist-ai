@@ -107,8 +107,12 @@ class Chatbot {
         const chatbotHTML = `
             <!-- Chatbot Minimized Button -->
             <div class="chatbot-minimized" id="chatbotMinimized">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <div class="chatbot-pulse-ring"></div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
                 </svg>
             </div>
 
@@ -170,22 +174,30 @@ class Chatbot {
     }
 
     checkContactPage() {
-        // Auto-expand on contact page only
+        const minimizedBtn = document.getElementById('chatbotMinimized');
+        const expandedWindow = document.getElementById('chatbotExpanded');
+        
+        // Show chatbot ONLY on contact page, but keep it minimized
         if (window.location.pathname.includes('contact.html')) {
-            setTimeout(() => this.expand(), 500);
+            if (minimizedBtn) minimizedBtn.style.display = 'flex';
         } else {
-            // Hide chatbot completely on non-contact pages
-            document.getElementById('chatbotMinimized').style.display = 'none';
-            document.getElementById('chatbotExpanded').style.display = 'none';
+            // Hide chatbot completely on all other pages
+            if (minimizedBtn) minimizedBtn.style.display = 'none';
+            if (expandedWindow) expandedWindow.style.display = 'none';
         }
     }
 
     expand() {
         this.isExpanded = true;
-        document.getElementById('chatbotMinimized').classList.add('hidden');
-        document.getElementById('chatbotExpanded').classList.add('active');
+        const minimizedBtn = document.getElementById('chatbotMinimized');
+        const expandedWindow = document.getElementById('chatbotExpanded');
         
-        // Show welcome message if first time
+        // Hide the minimized button and show the expanded window
+        if (minimizedBtn) minimizedBtn.style.display = 'none';
+        if (expandedWindow) expandedWindow.classList.add('active');
+        
+        // Show welcome message ONLY on first open (messageCount === 0)
+        // On subsequent opens, conversation history is preserved
         if (this.messageCount === 0) {
             this.showWelcomeMessage();
         }
@@ -193,8 +205,12 @@ class Chatbot {
 
     minimize() {
         this.isExpanded = false;
-        document.getElementById('chatbotExpanded').classList.remove('active');
-        document.getElementById('chatbotMinimized').classList.remove('hidden');
+        const minimizedBtn = document.getElementById('chatbotMinimized');
+        const expandedWindow = document.getElementById('chatbotExpanded');
+        
+        // Hide the expanded window and show the minimized button again
+        if (expandedWindow) expandedWindow.classList.remove('active');
+        if (minimizedBtn) minimizedBtn.style.display = 'flex';
     }
 
     showWelcomeMessage() {
@@ -204,15 +220,19 @@ class Chatbot {
         };
         this.addMessage(welcomeMsg);
         
-        // Show first 4 main questions as quick buttons
-        const mainQuestionIds = chatbotData.questions.slice(0, 4).map(q => q.id);
-        this.showQuickQuestions(mainQuestionIds);
+        // Delay showing questions to ensure greeting is visible first
+        setTimeout(() => {
+            // Show first 4 main questions as subtle hints
+            const mainQuestionIds = chatbotData.questions.slice(0, 4).map(q => q.id);
+            this.showQuickQuestions(mainQuestionIds);
+        }, 800);
     }
 
     showQuickQuestions(questionIds) {
         const messagesContainer = document.getElementById('chatbotMessages');
         const quickQuestionsHTML = `
             <div class="chatbot-quick-questions">
+                <div class="quick-questions-label">Suggested questions:</div>
                 ${questionIds.map(id => {
                     const question = this.getQuestionById(id);
                     return question ? `<button class="chatbot-quick-btn" data-id="${id}">${question.question}</button>` : '';
@@ -229,7 +249,8 @@ class Chatbot {
             });
         });
         
-        this.scrollToBottom();
+        // DON'T scroll when showing questions - keep greeting visible
+        // this.scrollToBottom();
     }
 
     getQuestionById(id) {
@@ -393,12 +414,18 @@ class Chatbot {
             </div>
         `;
         messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
+        
+        // Scroll to show the new message
         this.scrollToBottom();
     }
 
     scrollToBottom() {
         const messagesContainer = document.getElementById('chatbotMessages');
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        // Smooth scroll to bottom
+        messagesContainer.scrollTo({
+            top: messagesContainer.scrollHeight,
+            behavior: 'smooth'
+        });
     }
 }
 

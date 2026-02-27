@@ -161,7 +161,7 @@
 }
 
 .urban-ai-page .urban-hero-bg {
-    opacity: 0.3;
+    opacity: 1;
 }
 
 .urban-ai-page .urban-hero-overlay {
@@ -1417,71 +1417,9 @@
    DARK THEME OVERRIDES FOR URBAN AI PAGE
    ================================================ */
 
-/* Dark Mode: Change hero background to dark */
-[data-theme="dark"] .urban-ai-page .urban-hero {
-    background: var(--urban-bg-primary);
-    background-image: none;
-}
 
-[data-theme="dark"] .urban-ai-page .urban-hero-overlay {
-    background: linear-gradient(180deg, rgba(26, 26, 26, 0.9) 0%, rgba(26, 26, 26, 0.7) 100%);
-}
 
-[data-theme="dark"] .urban-ai-page .urban-hero-title {
-    color: var(--urban-text-primary);
-}
 
-[data-theme="dark"] .urban-ai-page .urban-hero-description {
-    color: var(--urban-text-secondary);
-}
-
-[data-theme="dark"] .urban-ai-page .urban-breadcrumb a {
-    color: var(--urban-text-secondary);
-}
-
-/* Dark Mode: Stats section */
-[data-theme="dark"] .urban-ai-page .urban-stats {
-    background: var(--urban-bg-secondary);
-}
-
-/* Dark Mode: Navbar */
-[data-theme="dark"] .urban-ai-page .navbar {
-    background: rgba(26, 26, 26, 0.95);
-    border-bottom: 1px solid rgba(54, 196, 183, 0.2);
-}
-
-[data-theme="dark"] .urban-ai-page .navbar.scrolled {
-    background: rgb(26, 26, 26);
-}
-
-/* Dark Mode: All sections with backgrounds */
-[data-theme="dark"] .urban-ai-page .section {
-    background: var(--urban-bg-primary);
-    color: var(--urban-text-primary);
-}
-
-[data-theme="dark"] .urban-ai-page .section:nth-child(even) {
-    background: var(--urban-bg-secondary);
-}
-
-/* Dark Mode: Cards */
-[data-theme="dark"] .urban-ai-page .feature-card,
-[data-theme="dark"] .urban-ai-page .use-case-card {
-    background: var(--urban-bg-secondary);
-    border-color: rgba(54, 196, 183, 0.2);
-}
-
-/* Dark Mode: Text colors */
-[data-theme="dark"] .urban-ai-page h1,
-[data-theme="dark"] .urban-ai-page h2,
-[data-theme="dark"] .urban-ai-page h3,
-[data-theme="dark"] .urban-ai-page h4 {
-    color: var(--urban-text-primary);
-}
-
-[data-theme="dark"] .urban-ai-page p {
-    color: var(--urban-text-secondary);
-}
 
 
 /* ================================================
