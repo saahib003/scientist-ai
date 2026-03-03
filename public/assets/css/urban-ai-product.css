@@ -1,0 +1,1572 @@
+/* ================================================
+   URBAN AI PRODUCT PAGE - BRAND COLORS
+   Matching geturbanai.com color scheme
+   ================================================ */
+
+/* Urban AI Brand Colors - Light Mode (Default) */
+:root {
+    --urban-teal: #36C4B7;
+    --urban-navy: #031727;
+    --urban-coral: #FD5765;
+    --urban-white: #FFFFFF;
+    --urban-overlay: rgba(4, 24, 31, 0.95);
+    --urban-overlay-solid: rgb(4, 24, 31);
+    --urban-teal-light: rgba(54, 196, 183, 0.1);
+    --urban-teal-glow: rgba(54, 196, 183, 0.3);
+    --urban-bg-primary: #FFFFFF;
+    --urban-bg-secondary: #F8F9FA;
+    --urban-text-primary: #031727;
+    --urban-text-secondary: #4A5568;
+}
+
+/* Urban AI Brand Colors - Dark Mode */
+[data-theme="dark"] {
+    --urban-teal: #36C4B7;
+    --urban-navy: #031727;
+    --urban-coral: #FD5765;
+    --urban-white: #FFFFFF;
+    --urban-overlay: rgba(4, 24, 31, 0.95);
+    --urban-overlay-solid: rgb(4, 24, 31);
+    --urban-teal-light: rgba(54, 196, 183, 0.1);
+    --urban-teal-glow: rgba(54, 196, 183, 0.3);
+    --urban-bg-primary: #1a1a1a;
+    --urban-bg-secondary: #2a2a2a;
+    --urban-text-primary: #FFFFFF;
+    --urban-text-secondary: rgba(255, 255, 255, 0.7);
+}
+
+/* ================================================
+   NAVBAR - Urban AI Branding
+   ================================================ */
+.urban-ai-page .navbar {
+    background: var(--urban-overlay);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(54, 196, 183, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.urban-ai-page .navbar.scrolled {
+    background: var(--urban-overlay-solid);
+    box-shadow: 0 4px 20px rgba(54, 196, 183, 0.1);
+    z-index: 1000;
+}
+
+/* Logo white on products page */
+.urban-ai-page .logo-img {
+    filter: brightness(0) invert(1) !important;
+}
+
+.urban-ai-page .logo-text {
+    color: var(--urban-white) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--urban-white) !important;
+}
+
+/* Mobile hamburger menu white on products page */
+.urban-ai-page .mobile-menu-btn span {
+    background: var(--urban-white) !important;
+}
+
+.urban-ai-page .nav-link {
+    color: var(--urban-white) !important;
+}
+
+.urban-ai-page .nav-link:hover,
+.urban-ai-page .nav-link.active {
+    color: var(--urban-coral) !important;
+}
+
+/* Override light mode styles specifically for urban-ai page */
+[data-theme="light"] .urban-ai-page .nav-link {
+    color: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .nav-link:hover,
+[data-theme="light"] .urban-ai-page .nav-link.active {
+    color: var(--urban-coral) !important;
+}
+
+[data-theme="light"] .urban-ai-page .navbar.scrolled .nav-link {
+    color: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .navbar.scrolled .nav-link:hover,
+[data-theme="light"] .urban-ai-page .navbar.scrolled .nav-link.active {
+    color: var(--urban-coral) !important;
+}
+
+[data-theme="light"] .urban-ai-page .nav-link.active::after,
+[data-theme="light"] .urban-ai-page .nav-link:hover::after {
+    background: var(--urban-coral) !important;
+}
+
+/* Keep navbar content white when scrolled */
+.urban-ai-page .navbar.scrolled .logo-img {
+    filter: brightness(0) invert(1) !important;
+}
+
+.urban-ai-page .navbar.scrolled .logo-text {
+    color: var(--urban-white) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--urban-white) !important;
+}
+
+.urban-ai-page .navbar.scrolled .nav-link {
+    color: var(--urban-white) !important;
+}
+
+.urban-ai-page .navbar.scrolled .nav-link:hover,
+.urban-ai-page .navbar.scrolled .nav-link.active {
+    color: var(--urban-coral) !important;
+}
+
+.urban-ai-page .navbar.scrolled .nav-link:hover::after,
+.urban-ai-page .navbar.scrolled .nav-link.active::after {
+    background: var(--urban-coral) !important;
+}
+
+.urban-ai-page .navbar.scrolled .mobile-menu-btn span {
+    background: var(--urban-white) !important;
+}
+
+.urban-ai-page .nav-link:hover::after,
+.urban-ai-page .nav-link.active::after {
+    background: var(--urban-coral) !important;
+    width: 100% !important;
+}
+
+.urban-ai-page .nav-cta {
+    background: var(--urban-navy) !important;
+    color: var(--urban-white) !important;
+    border: 2px solid var(--urban-teal) !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.urban-ai-page .nav-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--urban-teal);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.urban-ai-page .nav-cta:hover::before {
+    left: 0;
+}
+
+.urban-ai-page .nav-cta:hover {
+    color: var(--urban-white) !important;
+    border-color: var(--urban-navy) !important;
+}
+
+/* ================================================
+   HERO SECTION
+   ================================================ */
+.urban-ai-page .urban-hero {
+    background: var(--urban-navy);
+    background-image: url('../urban-ai-assets/background-image.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+}
+
+.urban-ai-page .urban-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px !important;
+}
+
+.urban-ai-page .urban-hero-bg {
+    opacity: 1;
+}
+
+.urban-ai-page .urban-hero-overlay {
+    background: linear-gradient(180deg, rgba(3, 23, 39, 0.9) 0%, rgba(3, 23, 39, 0.7) 100%);
+}
+
+.urban-ai-page .urban-hero-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.urban-ai-page .urban-hero-logo {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(54, 196, 183, 0.3));
+}
+
+.urban-ai-page .urban-hero-title {
+    color: var(--urban-white);
+}
+
+.urban-ai-page .urban-hero-subtitle {
+    color: var(--urban-teal);
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+.urban-ai-page .urban-hero-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.urban-ai-page .urban-breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.urban-ai-page .urban-breadcrumb a:hover {
+    color: var(--urban-teal);
+}
+
+/* ================================================
+   URBAN AI BUTTONS
+   ================================================ */
+.urban-ai-page .urban-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.urban-ai-page .urban-btn-primary {
+    background: transparent;
+    border: 2px solid var(--urban-coral);
+    color: var(--urban-coral);
+}
+
+.urban-ai-page .urban-btn-primary:hover {
+    background: var(--urban-coral);
+    border-color: var(--urban-coral);
+    color: var(--urban-navy);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 196, 183, 0.3);
+}
+
+.urban-ai-page .urban-btn-ghost {
+    background: transparent;
+    border: 2px solid var(--urban-white);
+    color: var(--urban-white);
+}
+
+.urban-ai-page .urban-btn-ghost:hover {
+    background: var(--urban-white);
+    color: var(--urban-navy);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* CTA Section Button Overrides */
+.urban-ai-page .urban-cta .urban-btn-primary {
+    background: transparent;
+    border: 2px solid var(--urban-coral);
+    color: var(--urban-coral);
+}
+
+.urban-ai-page .urban-cta .urban-btn-primary:hover {
+    background: var(--urban-coral);
+    border-color: var(--urban-coral);
+    color: var(--urban-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 196, 183, 0.3);
+}
+
+
+.urban-ai-page .urban-cta .urban-btn-ghost {
+     background: transparent;
+    border: 2px solid var(--urban-teal);
+    color: var(--urban-teal);
+}
+
+.urban-ai-page .urban-cta .urban-btn-ghost:hover {
+    background: var(--urban-teal);
+    border-color: var(--urban-teal);
+    color: var(--urban-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 196, 183, 0.3);
+}
+
+/* Old button classes - kept for compatibility but not used */
+.urban-ai-page .btn-primary {
+    background: transparent;
+    border: 1px solid var(--urban-teal);
+    color: var(--urban-coral);
+}
+
+.urban-ai-page .btn-primary:hover {
+    background: var(--urban-coral);
+    color: var(--urban-navy);
+}
+
+.urban-ai-page .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--urban-teal);
+    color: var(--urban-white);
+}
+
+.urban-ai-page .btn-ghost:hover {
+    background: var(--urban-white);
+    color: var(--urban-navy);
+}
+
+/* ================================================
+   STATS SECTION
+   ================================================ */
+.urban-ai-page .urban-stats {
+    background: #c4c3c3;
+    padding: 60px 0;
+}
+
+.urban-ai-page .stats-grid {
+    gap: 20px;
+}
+
+.urban-ai-page .urban-stat-card {
+    padding: 30px 20px;
+    border: 2px solid transparent;
+}
+
+.urban-ai-page .urban-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Card 1 - Navy */
+.urban-ai-page .urban-stat-card:nth-child(1) {
+    background: #FD5765;
+    border-color: #FD5765;  
+}
+
+.urban-ai-page .urban-stat-card:nth-child(1) .stat-number {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .urban-stat-card:nth-child(1) .stat-label {
+    color: #050000;
+}
+
+/* Card 2 - Light Gray */
+.urban-ai-page .urban-stat-card:nth-child(2) {
+    background: #E5E5E5;
+    border-color: #E5E5E5;
+}
+
+.urban-ai-page .urban-stat-card:nth-child(2) .stat-number {
+    color: #031727;
+}
+
+.urban-ai-page .urban-stat-card:nth-child(2) .stat-label {
+    color: #333333;
+}
+
+/* Card 3 - Coral */
+.urban-ai-page .urban-stat-card:nth-child(3) {
+    background: #FD5765;
+    border-color: #FD5765;
+}
+
+.urban-ai-page .urban-stat-card:nth-child(3) .stat-number {
+    color: #031727;
+}
+
+.urban-ai-page .urban-stat-card:nth-child(3) .stat-label {
+    color: #031727;
+}
+
+/* Card 4 - Teal */
+.urban-ai-page .urban-stat-card:nth-child(4) {
+    background: #36C4B7;
+    border-color: #36C4B7;
+}
+
+.urban-ai-page .urban-stat-card:nth-child(4) .stat-number {
+    color: #031727;
+}
+
+.urban-ai-page .urban-stat-card:nth-child(4) .stat-label {
+    color: #031727;
+}
+
+/* ================================================
+   OVERVIEW SECTION
+   ================================================ */
+.urban-ai-page .urban-overview {
+    background: #36C4B7;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+.urban-ai-page .urban-overview .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.urban-ai-page .section-tag {
+    background: #FFFFFF;
+    color: #031727;
+    border: 2px solid #FFFFFF;
+    padding: 8px 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.urban-ai-page .section-title {
+    color: #000000 !important;
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.urban-ai-page .section-subtitle {
+    color: #FFFFFF;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+.urban-ai-page .overview-visual {
+    max-width: 900px;
+    margin: 40px auto 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.urban-ai-page .brain-icon {
+    width: 180px;
+    height: 180px;
+    filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.3));
+    animation: floatGentle 4s ease-in-out infinite;
+    object-fit: contain;
+}
+
+.urban-ai-page .overview-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.urban-ai-page .overview-feature-item {
+    background: #2da89d;
+    border: 2px solid #FFFFFF;
+    padding: 20px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.urban-ai-page .overview-feature-item:hover {
+    border-color: #FFFFFF;
+    background: #28998f;
+    transform: translateX(10px);
+}
+
+.urban-ai-page .feature-dot {
+    background: #FFFFFF;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.urban-ai-page .overview-feature-item span {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+    .urban-ai-page .overview-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .urban-ai-page .brain-icon {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* ================================================
+   SECTORS SECTION
+   ================================================ */
+.urban-ai-page .urban-sectors {
+    background: #031727;
+    background-image: url('../urban-ai-assets/pedestrian.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.urban-ai-page .urban-section-title {
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.urban-ai-page .sectors-intro {
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.urban-ai-page .sector-card {
+    border: none;
+    padding: 0;
+    margin-bottom: 40px;
+    gap: 0;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.urban-ai-page .sector-content {
+    padding: 30px;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.urban-ai-page .sector-card.visible .sector-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.urban-ai-page .sector-media {
+    padding: 0;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+}
+
+.urban-ai-page .sector-card.visible .sector-media {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Reverse cards - swap animation directions */
+.urban-ai-page .sector-card.sector-card-reverse .sector-content {
+    transform: translateX(100px);
+}
+
+.urban-ai-page .sector-card.sector-card-reverse.visible .sector-content {
+    transform: translateX(0);
+}
+
+.urban-ai-page .sector-card.sector-card-reverse .sector-media {
+    transform: translateX(-100px);
+}
+
+.urban-ai-page .sector-card.sector-card-reverse.visible .sector-media {
+    transform: translateX(0);
+}
+
+.urban-ai-page .sector-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.urban-ai-page .sector-icon svg {
+    width: 48px;
+    height: 48px;
+    stroke-width: 2;
+}
+
+.urban-ai-page .sector-title {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+}
+
+.urban-ai-page .sector-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.urban-ai-page .sector-features {
+    margin: 0;
+}
+
+.urban-ai-page .sector-features li {
+    padding: 8px 0;
+    padding-left: 25px;
+}
+
+.urban-ai-page .sector-media {
+    padding: 0;
+}
+
+.urban-ai-page .video-placeholder {
+    padding: 60px 40px;
+    border: 2px dashed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+/* Card 1 - Navy */
+.urban-ai-page .sector-card:nth-of-type(1) {
+    background: #2da89d !important;
+    border-color: #2da89d;
+}
+
+.urban-ai-page .sector-card:nth-of-type(1) .sector-title,
+.urban-ai-page .sector-card:nth-of-type(1) .sector-description,
+.urban-ai-page .sector-card:nth-of-type(1) .sector-features li {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(1) .sector-features li::before {
+    color: #fff;
+}
+
+.urban-ai-page .sector-card:nth-of-type(1) .video-placeholder {
+    background: #36C4B7;
+    border-color: white;
+}
+
+.urban-ai-page .sector-card:nth-of-type(1) .video-placeholder svg,
+.urban-ai-page .sector-card:nth-of-type(1) .video-placeholder p {
+    color: white;
+}
+
+/* Card 2 - Light Gray/White */
+.urban-ai-page .sector-card:nth-of-type(2) {
+    background: #F5F5F5 !important;
+    border-color: #36C4B7;
+}
+
+.urban-ai-page .sector-card:nth-of-type(2) .sector-title,
+.urban-ai-page .sector-card:nth-of-type(2) .sector-description,
+.urban-ai-page .sector-card:nth-of-type(2) .sector-features li {
+    color: #031727;
+}
+
+.urban-ai-page .sector-card:nth-of-type(2) .sector-features li::before {
+    color: #031727;
+}
+
+.urban-ai-page .sector-card:nth-of-type(2) .video-placeholder {
+    background: #d0d0d0;
+    border-color: #333333;
+}
+
+.urban-ai-page .sector-card:nth-of-type(2) .video-placeholder svg,
+.urban-ai-page .sector-card:nth-of-type(2) .video-placeholder p {
+    color: #031727;
+}
+
+/* Card 3 - Coral */
+.urban-ai-page .sector-card:nth-of-type(3) {
+    background: #FD5765 !important;
+    border-color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(3) .sector-title {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(3) .sector-description,
+.urban-ai-page .sector-card:nth-of-type(3) .sector-features li {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(3) .sector-features li::before {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(3) .video-placeholder {
+    background: #fc3d4f;
+    border-color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(3) .video-placeholder svg {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(3) .video-placeholder p {
+    color: #FFFFFF;
+}
+
+/* Card 4 - Teal */
+.urban-ai-page .sector-card:nth-of-type(4) {
+    background: #36C4B7 !important;
+    border-color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(4) .sector-title,
+.urban-ai-page .sector-card:nth-of-type(4) .sector-description,
+.urban-ai-page .sector-card:nth-of-type(4) .sector-features li {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(4) .sector-features li::before {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(4) .video-placeholder {
+    background: #2da89d;
+    border-color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(4) .video-placeholder svg,
+.urban-ai-page .sector-card:nth-of-type(4) .video-placeholder p {
+    color: #FFFFFF;
+}
+
+/* Card 5 - Navy (repeat pattern) */
+.urban-ai-page .sector-card:nth-of-type(5) {
+    background: #FD5765 !important;
+    border-color: #FFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(5) .sector-title,
+.urban-ai-page .sector-card:nth-of-type(5) .sector-description,
+.urban-ai-page .sector-card:nth-of-type(5) .sector-features li {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .sector-card:nth-of-type(5) .sector-features li::before {
+    color: white;
+}
+
+.urban-ai-page .sector-card:nth-of-type(5) .video-placeholder {
+    background: #fc3d4f;
+    border-color: white;
+}
+
+.urban-ai-page .sector-card:nth-of-type(5) .video-placeholder svg,
+.urban-ai-page .sector-card:nth-of-type(5) .video-placeholder p {
+    color: white;
+}
+
+.urban-ai-page .sector-card:hover {
+    box-shadow: 0 20px 60px rgba(54, 196, 183, 0.25);
+    transform: translateY(-5px);
+}
+
+/* ================================================
+   HOW IT WORKS SECTION
+   ================================================ */
+.urban-ai-page .urban-how-it-works {
+    background: #FFFFFF;
+    padding: 60px 0;
+}
+
+.urban-ai-page .urban-how-it-works .section-title {
+    color: #000;
+}
+
+.urban-ai-page .how-it-works-grid {
+    gap: 20px;
+}
+
+.urban-ai-page .how-step {
+    padding: 30px 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.urban-ai-page .how-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.urban-ai-page .step-icon {
+    margin: 0 auto 20px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.urban-ai-page .step-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.urban-ai-page .how-step h3 {
+    margin-bottom: 10px;
+}
+
+.urban-ai-page .how-step p {
+    margin: 0;
+}
+
+/* Card 1 - Navy */
+.urban-ai-page .how-step:nth-child(1) {
+    background: #FD5765;
+    border-color: #FD5765;
+}
+
+.urban-ai-page .how-step:nth-child(1) .step-icon svg {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .how-step:nth-child(1) h3 {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .how-step:nth-child(1) p {
+    color: #FFFFFF;
+}
+
+/* Card 2 - Light Gray */
+.urban-ai-page .how-step:nth-child(2) {
+    background: #E5E5E5;
+    border-color: #E5E5E5;
+}
+
+.urban-ai-page .how-step:nth-child(2) .step-icon svg {
+    color: #031727;
+}
+
+.urban-ai-page .how-step:nth-child(2) h3 {
+    color: #031727;
+}
+
+.urban-ai-page .how-step:nth-child(2) p {
+    color: #333333;
+}
+
+/* Card 3 - Coral */
+.urban-ai-page .how-step:nth-child(3) {
+    background: #FD5765;
+    border-color: #FD5765;
+}
+
+.urban-ai-page .how-step:nth-child(3) .step-icon svg {
+    color: #031727;
+}
+
+.urban-ai-page .how-step:nth-child(3) h3 {
+    color: #031727;
+}
+
+.urban-ai-page .how-step:nth-child(3) p {
+    color: #031727;
+}
+
+/* Card 4 - Teal */
+.urban-ai-page .how-step:nth-child(4) {
+    background: #36C4B7;
+    border-color: #36C4B7;
+}
+
+.urban-ai-page .how-step:nth-child(4) .step-icon svg {
+    color: #031727;
+}
+
+.urban-ai-page .how-step:nth-child(4) h3 {
+    color: #031727;
+}
+
+.urban-ai-page .how-step:nth-child(4) p {
+    color: #031727;
+}
+
+/* ================================================
+   FEATURES SECTION
+   ================================================ */
+.urban-ai-page .urban-features {
+    background: #ffffff;
+    /* background-image: url('../urban-ai-assets/fast-moving.avif'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 0;
+    position: relative;
+}
+
+.urban-ai-page .urban-features .section-header {
+    margin-bottom: 40px;
+}
+
+.urban-ai-page .urban-features .section-tag {
+    background: #FFFFFF;
+    color: #031727;
+    border: 2px solid #FFFFFF;
+}
+
+.urban-ai-page .urban-features .section-title {
+    color: #000000;
+}
+
+.urban-ai-page .urban-features .section-subtitle {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .features-grid {
+    gap: 20px;
+}
+
+.urban-ai-page .feature-card {
+    border: 2px solid transparent;
+    padding: 40px 30px;
+}
+
+.urban-ai-page .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Card 1 - Navy/Dark */
+.urban-ai-page .feature-card:nth-child(1) {
+    background: #FD5765;
+    border-color: #FD5765;
+}
+
+.urban-ai-page .feature-card:nth-child(1) .feature-icon {
+    background: transparent;
+}
+
+.urban-ai-page .feature-card:nth-child(1) .feature-icon svg {
+    color: #FFFFFF;
+    width: 60px;
+    height: 60px;
+    stroke-width: 1.5;
+}
+
+.urban-ai-page .feature-card:nth-child(1) h3 {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .feature-card:nth-child(1) p {
+    color: #FFFFFF;
+}
+
+/* Card 2 - Light Gray */
+.urban-ai-page .feature-card:nth-child(2) {
+    background: #E5E5E5;
+    border-color: #E5E5E5;
+}
+
+.urban-ai-page .feature-card:nth-child(2) .feature-icon {
+    background: transparent;
+}
+
+.urban-ai-page .feature-card:nth-child(2) .feature-icon svg {
+    color: #031727;
+    width: 60px;
+    height: 60px;
+    stroke-width: 1.5;
+}
+
+.urban-ai-page .feature-card:nth-child(2) h3 {
+    color: #031727;
+}
+
+.urban-ai-page .feature-card:nth-child(2) p {
+    color: #333333;
+}
+
+/* Card 3 - Coral */
+.urban-ai-page .feature-card:nth-child(3) {
+    background: #FD5765;
+    border-color: #FD5765;
+}
+
+.urban-ai-page .feature-card:nth-child(3) .feature-icon {
+    background: transparent;
+}
+
+.urban-ai-page .feature-card:nth-child(3) .feature-icon svg {
+    color: #031727;
+    width: 60px;
+    height: 60px;
+    stroke-width: 1.5;
+}
+
+.urban-ai-page .feature-card:nth-child(3) h3 {
+    color: #031727;
+}
+
+.urban-ai-page .feature-card:nth-child(3) p {
+    color: #031727;
+}
+
+/* Card 4 - Teal */
+.urban-ai-page .feature-card:nth-child(4) {
+    background: #36C4B7;
+    border-color: #36C4B7;
+}
+
+.urban-ai-page .feature-card:nth-child(4) .feature-icon {
+    background: transparent;
+}
+
+.urban-ai-page .feature-card:nth-child(4) .feature-icon svg {
+    color: #031727;
+    width: 60px;
+    height: 60px;
+    stroke-width: 1.5;
+}
+
+.urban-ai-page .feature-card:nth-child(4) h3 {
+    color: #031727;
+}
+
+.urban-ai-page .feature-card:nth-child(4) p {
+    color: #031727;
+}
+
+/* Additional cards if any - repeat pattern */
+.urban-ai-page .feature-card:nth-child(5) {
+    
+    background: #FD5765;
+    border-color: #FD5765;
+}
+
+.urban-ai-page .feature-card:nth-child(5) .feature-icon svg {
+    color: #FFFFFF;
+    width: 60px;
+    height: 60px;
+}
+
+.urban-ai-page .feature-card:nth-child(5) h3,
+.urban-ai-page .feature-card:nth-child(5) p {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .feature-card:nth-child(6) {
+    background: #E5E5E5;
+    border-color: #E5E5E5;
+}
+
+.urban-ai-page .feature-card:nth-child(6) .feature-icon svg {
+    color: #031727;
+    width: 60px;
+    height: 60px;
+}
+
+.urban-ai-page .feature-card:nth-child(6) h3 {
+    color: #031727;
+}
+
+.urban-ai-page .feature-card:nth-child(6) p {
+    color: #333333;
+}
+
+/* ================================================
+   TECHNOLOGY STACK SECTION
+   ================================================ */
+.urban-ai-page .urban-tech-stack {
+    background: #031727;
+}
+
+.urban-ai-page .urban-tech-stack .section-tag {
+    background: #36C4B7;
+    color: #FFFFFF;
+    border: 2px solid #36C4B7;
+}
+
+.urban-ai-page .urban-tech-stack .section-title {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .urban-tech-stack .section-subtitle {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .tech-stack-item {
+    background: #052a3f;
+    border: 2px solid #36C4B7;
+}
+
+.urban-ai-page .tech-stack-item:hover {
+    border-color: #2da89d;
+    box-shadow: 0 15px 40px rgba(54, 196, 183, 0.3);
+}
+
+.urban-ai-page .tech-stack-item span {
+    color: #FFFFFF;
+}
+
+/* ================================================
+   MAP SECTION
+   ================================================ */
+.urban-ai-page .urban-map-section {
+    background: #E5E5E5;
+}
+
+.urban-ai-page .urban-map-section .section-tag {
+    background: #36C4B7;
+    color: #FFFFFF;
+    border: 2px solid #36C4B7;
+}
+
+.urban-ai-page .urban-map-section .section-title {
+    color: #031727;
+}
+
+.urban-ai-page .urban-map-section .section-subtitle {
+    color: #333333;
+}
+
+.urban-ai-page .deployment-map {
+    border: 2px solid #36C4B7;
+    box-shadow: 0 20px 60px rgba(54, 196, 183, 0.2);
+}
+
+/* ================================================
+   IMPACT SECTION
+   ================================================ */
+.urban-ai-page .urban-impact {
+    background: #36C4B7;
+}
+
+.urban-ai-page .urban-impact .section-tag {
+    background: #FFFFFF;
+    color: #031727;
+    border: 2px solid #FFFFFF;
+}
+
+.urban-ai-page .urban-impact .section-title {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .impact-card {
+    background: #2da89d;
+    border: 2px solid #FFFFFF;
+}
+
+.urban-ai-page .impact-card:hover {
+    border-color: #FFFFFF;
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.25);
+}
+
+.urban-ai-page .impact-card h3 {
+    color: #FFFFFF;
+}
+
+.urban-ai-page .impact-stat {
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.urban-ai-page .impact-desc {
+    color: #FFFFFF;
+}
+
+/* ================================================
+   CTA SECTION
+   ================================================ */
+.urban-ai-page .urban-cta {
+    background: var(--urban-navy);
+}
+
+.urban-ai-page .urban-cta h2 {
+    color: var(--urban-white);
+}
+
+.urban-ai-page .urban-cta p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Old CTA button styles removed - now using .urban-btn classes */
+
+/* ================================================
+   FOOTER - Urban AI Branding
+   ================================================ */
+.urban-ai-page .footer {
+    background: var(--urban-overlay-solid);
+    border-top: 1px solid rgba(54, 196, 183, 0.1);
+}
+
+/* Footer logo white on products page */
+.urban-ai-page .footer .logo-img {
+    filter: brightness(0) invert(1);
+}
+
+.urban-ai-page .footer .logo-text {
+    color: var(--urban-white);
+    background: none;
+    -webkit-text-fill-color: var(--urban-white);
+}
+
+.urban-ai-page .footer-tagline {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.urban-ai-page .footer-col h4 {
+    color: var(--urban-white) !important;
+}
+
+.urban-ai-page .footer-col a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.urban-ai-page .footer-col a:hover {
+    color: var(--urban-teal);
+}
+
+.urban-ai-page .footer-bottom {
+    border-top: 1px solid rgba(54, 196, 183, 0.1);
+}
+
+.urban-ai-page .footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ================================================
+   PARTICLE CANVAS - Hide on Urban AI page
+   ================================================ */
+.urban-ai-page #particleCanvas {
+    display: none;
+}
+
+/* ================================================
+   SCROLL TO TOP BUTTON
+   ================================================ */
+.urban-ai-page .scroll-to-top {
+    background: var(--urban-teal);
+    color: var(--urban-white);
+    border: 2px solid var(--urban-teal);
+}
+
+.urban-ai-page .scroll-to-top:hover {
+    background: transparent;
+    color: var(--urban-teal);
+    transform: translateY(-5px);
+}
+
+/* ================================================
+   MOBILE MENU
+   ================================================ */
+.urban-ai-page .mobile-menu {
+    background: var(--urban-overlay-solid);
+}
+
+.urban-ai-page .mobile-nav-link {
+    color: var(--urban-white);
+}
+
+.urban-ai-page .mobile-nav-link:hover {
+    color: var(--urban-teal);
+    background: rgba(54, 196, 183, 0.1);
+}
+
+/* ================================================
+   THEME TOGGLE - Show on Urban AI page
+   ================================================ */
+.urban-ai-page .theme-toggle {
+    display: block;
+}
+
+/* Style the theme toggle for Urban AI page */
+.urban-ai-page .theme-toggle-track {
+    background: rgba(54, 196, 183, 0.2);
+    border: 1px solid rgba(54, 196, 183, 0.3);
+}
+
+.urban-ai-page .theme-toggle-thumb {
+    background: var(--urban-teal);
+}
+
+[data-theme="dark"] .urban-ai-page .theme-toggle-track {
+    background: rgba(54, 196, 183, 0.3);
+    border: 1px solid rgba(54, 196, 183, 0.4);
+}
+
+/* ================================================
+   RESPONSIVE ADJUSTMENTS
+   ================================================ */
+@media (max-width: 768px) {
+    .urban-ai-page .urban-hero-logo {
+        max-width: 280px;
+    }
+    
+    .urban-ai-page .urban-hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .urban-ai-page .urban-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    /* Sector Cards - Mobile Responsive */
+    .urban-ai-page .sector-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 30px;
+    }
+    
+    .urban-ai-page .sector-content {
+        padding: 25px 20px;
+        transform: translateY(50px);
+    }
+    
+    .urban-ai-page .sector-media {
+        transform: translateY(50px);
+        transition-delay: 0s;
+    }
+    
+    .urban-ai-page .sector-card.visible .sector-content {
+        transform: translateY(0);
+    }
+    
+    .urban-ai-page .sector-card.visible .sector-media {
+        transform: translateY(0);
+    }
+    
+    .urban-ai-page .sector-card.sector-card-reverse .sector-content {
+        transform: translateY(50px);
+        order: 1;
+    }
+    
+    .urban-ai-page .sector-card.sector-card-reverse .sector-media {
+        transform: translateY(50px);
+        order: 2;
+    }
+    
+    .urban-ai-page .sector-card.sector-card-reverse.visible .sector-content {
+        transform: translateY(0);
+    }
+    
+    .urban-ai-page .sector-card.sector-card-reverse.visible .sector-media {
+        transform: translateY(0);
+    }
+    
+    .urban-ai-page .sector-icon {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .urban-ai-page .sector-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .urban-ai-page .sector-title {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .urban-ai-page .sector-description {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+    
+    .urban-ai-page .sector-features li {
+        padding: 6px 0;
+        padding-left: 20px;
+        font-size: 0.9rem;
+    }
+    
+    .urban-ai-page .video-placeholder {
+        padding: 40px 20px;
+        min-height: 200px;
+    }
+    
+    .urban-ai-page .video-placeholder svg {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .urban-ai-page .video-placeholder p {
+        font-size: 0.9rem;
+    }
+    
+    /* Section titles and intro */
+    .urban-ai-page .urban-section-title {
+        font-size: 1.75rem;
+        margin-bottom: 12px;
+    }
+    
+    .urban-ai-page .sectors-intro {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+    
+    /* Buttons */
+    .urban-ai-page .urban-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .urban-ai-page .urban-hero-cta {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .urban-ai-page .urban-hero-cta .urban-btn {
+        width: 100%;
+    }
+}
+
+
+/* ================================================
+   DARK THEME OVERRIDES FOR URBAN AI PAGE
+   ================================================ */
+
+
+
+
+
+
+/* ================================================
+   MAP ATTRIBUTION HIDING
+   ================================================ */
+.leaflet-control-attribution {
+    display: none !important;
+}
+
+.leaflet-bottom.leaflet-right {
+    display: none !important;
+}
+
+
+/* ================================================
+   SECTOR VIDEO STYLING
+   ================================================ */
+.urban-ai-page .sector-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* border-radius: 12px; */
+    display: block;
+}
+
+.urban-ai-page .sector-media {
+    overflow: hidden;
+    /* border-radius: 12px; */
+}
+
+/* Ensure video maintains aspect ratio */
+.urban-ai-page .sector-card:nth-of-type(2) .sector-media {
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+
+/* ================================================
+   LIGHT THEME OVERRIDES FOR URBAN AI PAGE NAVBAR
+   ================================================ */
+
+/* Keep navbar content white in light theme */
+[data-theme="light"] .urban-ai-page .logo-img {
+    filter: brightness(0) invert(1) !important;
+}
+
+[data-theme="light"] .urban-ai-page .logo-text {
+    color: var(--urban-white) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .nav-link {
+    color: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .navbar.scrolled .logo-img {
+    filter: brightness(0) invert(1) !important;
+}
+
+[data-theme="light"] .urban-ai-page .navbar.scrolled .logo-text {
+    color: var(--urban-white) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .navbar.scrolled .nav-link {
+    color: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .mobile-menu-btn span {
+    background: var(--urban-white) !important;
+}
+
+[data-theme="light"] .urban-ai-page .navbar.scrolled .mobile-menu-btn span {
+    background: var(--urban-white) !important;
+}
+
+
+/* ================================================
+   CHATBOT - Urban AI Coral Color
+   ================================================ */
+.urban-ai-page .chatbot-minimized {
+    background: var(--urban-coral) !important;
+    border-color: var(--urban-coral) !important;
+}
+
+.urban-ai-page .chatbot-minimized:hover {
+    background: var(--urban-coral) !important;
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(253, 87, 101, 0.4) !important;
+}
+
+.urban-ai-page .chatbot-pulse-ring {
+    border-color: var(--urban-coral) !important;
+}
+
+.urban-ai-page .chatbot-header {
+    background: var(--urban-coral) !important;
+}
+
+.urban-ai-page .chatbot-send-btn {
+    background: var(--urban-coral) !important;
+}
+
+.urban-ai-page .chatbot-send-btn:hover {
+    background: #e54858 !important;
+}
+
+.urban-ai-page .chatbot-quick-btn:hover {
+    background: var(--urban-coral) !important;
+    border-color: var(--urban-coral) !important;
+    color: white !important;
+}

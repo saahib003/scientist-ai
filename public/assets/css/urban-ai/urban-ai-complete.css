@@ -1,0 +1,71 @@
+/* ================================================
+   URBAN AI PRODUCT PAGE - COMPLETE STANDALONE CSS
+   All styles combined for easy maintenance
+   ================================================ */
+
+/* Import base Urban AI styles */
+@import url('../urban-ai.css');
+@import url('../urban-ai-product.css');
+
+/* ================================================
+   CRITICAL OVERRIDES - Keep colorful design
+   ================================================ */
+
+/* Remove dark overlays */
+body.urban-ai-page .urban-hero-bg,
+body.urban-ai-page .hero-bg {
+    opacity: 0.3 !important;
+}
+
+/* Feature cards - colorful backgrounds */
+body.urban-ai-page .feature-card {
+    opacity: 1 !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+body.urban-ai-page .feature-card::before {
+    display: none !important;
+}
+
+/* High contrast text */
+body.urban-ai-page[data-theme="dark"] .feature-card h3,
+body.urban-ai-page[data-theme="dark"] .feature-card p {
+    color: #ffffff !important;
+}
+
+body.urban-ai-page[data-theme="light"] .feature-card h3 {
+    color: #1a1a1a !important;
+}
+
+body.urban-ai-page[data-theme="light"] .feature-card p {
+    color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Visible icons */
+body.urban-ai-page .feature-icon {
+    opacity: 1 !important;
+}
+
+body.urban-ai-page[data-theme="dark"] .feature-icon svg {
+    color: #ffffff !important;
+    opacity: 0.9 !important;
+}
+
+body.urban-ai-page[data-theme="light"] .feature-icon svg {
+    color: #1a1a1a !important;
+    opacity: 0.8 !important;
+}
+
+/* Teal accents */
+body.urban-ai-page .stat-number,
+body.urban-ai-page .section-tag,
+body.urban-ai-page .hero-badge,
+body.urban-ai-page .tech-badge {
+    color: #1DE9B6 !important;
+}
+
+/* Other cards */
+body.urban-ai-page[data-theme="dark"] .sector-card,
+body.urban-ai-page[data-theme="dark"] .how-step {
+    opacity: 1 !important;
+}

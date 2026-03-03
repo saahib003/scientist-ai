@@ -1,0 +1,141 @@
+/* ================================================
+   URBAN AI PRODUCT PAGE - LIGHT THEME FIX
+   This file MUST be loaded LAST to override all styles.css rules
+   ================================================ */
+
+/* Force ALL product page elements to ignore styles.css light theme overrides */
+body.urban-ai-page[data-theme="light"] *,
+body.urban-ai-page [data-theme="light"] * {
+    /* Reset any black color overrides */
+}
+
+/* Hero subtitle - TEAL */
+body.urban-ai-page[data-theme="light"] .urban-hero-subtitle {
+    color: #1DE9B6 !important;
+}
+
+/* Section tags - TEAL background */
+body.urban-ai-page[data-theme="light"] .section-tag {
+    background: rgba(29, 233, 182, 0.1) !important;
+    color: #1DE9B6 !important;
+    border: none !important;
+}
+
+/* Stats numbers - TEAL */
+body.urban-ai-page[data-theme="light"] .stat-number {
+    color: #1DE9B6 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #1DE9B6 !important;
+}
+
+/* Feature icons - TEAL background */
+body.urban-ai-page[data-theme="light"] .feature-icon {
+    background: linear-gradient(135deg, rgba(29, 233, 182, 0.1) 0%, rgba(0, 206, 209, 0.1) 100%) !important;
+}
+
+/* ALL SVG icons - TEAL */
+body.urban-ai-page[data-theme="light"] .feature-icon svg,
+body.urban-ai-page[data-theme="light"] .sector-icon svg,
+body.urban-ai-page[data-theme="light"] .step-icon svg,
+body.urban-ai-page[data-theme="light"] .how-step svg,
+body.urban-ai-page[data-theme="light"] svg {
+    color: #1DE9B6 !important;
+    stroke: #1DE9B6 !important;
+}
+
+/* Step numbers - TEAL gradient */
+body.urban-ai-page[data-theme="light"] .step-number {
+    background: linear-gradient(135deg, #1DE9B6 0%, #00CED1 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Sector features checkmarks - TEAL */
+body.urban-ai-page[data-theme="light"] .sector-features li::before {
+    color: #1DE9B6 !important;
+}
+
+/* Feature cards */
+body.urban-ai-page[data-theme="light"] .feature-card {
+    border-color: #E8E8E8 !important;
+    box-shadow: none !important;
+}
+
+body.urban-ai-page[data-theme="light"] .feature-card:hover {
+    border-color: #1DE9B6 !important;
+    box-shadow: 0 20px 50px rgba(29, 233, 182, 0.12) !important;
+}
+
+/* Buttons - DARK TEAL normal, BRIGHT TEAL hover */
+body.urban-ai-page[data-theme="light"] .btn,
+body.urban-ai-page[data-theme="light"] .btn-primary {
+    background: #00B894 !important;
+    border: 2px solid #00B894 !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
+body.urban-ai-page[data-theme="light"] .btn:hover,
+body.urban-ai-page[data-theme="light"] .btn-primary:hover {
+    background: #1DE9B6 !important;
+    border-color: #1DE9B6 !important;
+    color: white !important;
+}
+
+body.urban-ai-page[data-theme="light"] .btn-ghost {
+    background: white !important;
+    border: 2px solid #E5E5E5 !important;
+    color: #1a1a1a !important;
+    border-radius: 8px !important;
+}
+
+body.urban-ai-page[data-theme="light"] .btn-ghost:hover {
+    border-color: #1DE9B6 !important;
+    color: #1DE9B6 !important;
+    background: white !important;
+}
+
+/* Headings - DARK GREY */
+
+
+body.urban-ai-page[data-theme="light"] h3,
+body.urban-ai-page[data-theme="light"] h4,
+
+body.urban-ai-page[data-theme="light"] .sector-title {
+    color: #1a1a1a !important;
+    background: none !important;
+    -webkit-text-fill-color: #1a1a1a !important;
+}
+
+/* CTA section heading - WHITE */
+body.urban-ai-page[data-theme="light"] .urban-cta h2 {
+    color: white !important;
+}
+
+/* Cards */
+body.urban-ai-page[data-theme="light"] .sector-card,
+body.urban-ai-page[data-theme="light"] .how-step {
+    border-color: #E8E8E8 !important;
+}
+
+body.urban-ai-page[data-theme="light"] .sector-card:hover,
+body.urban-ai-page[data-theme="light"] .how-step:hover {
+    border-color: #1DE9B6 !important;
+}
+
+/* Tech badges - TEAL */
+body.urban-ai-page[data-theme="light"] .tech-badge,
+body.urban-ai-page[data-theme="light"] .hero-badge {
+    background: rgba(29, 233, 182, 0.1) !important;
+    color: #1DE9B6 !important;
+    border: 1px solid rgba(29, 233, 182, 0.2) !important;
+}
+
+/* Override gradient-text */
+body.urban-ai-page[data-theme="light"] .gradient-text {
+    color: #1a1a1a !important;
+    -webkit-text-fill-color: #1a1a1a !important;
+    background: none !important;
+}
