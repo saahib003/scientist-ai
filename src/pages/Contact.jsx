@@ -29,7 +29,7 @@ function Contact() {
       // Configure EmailJS with your credentials
       await emailjs.send(
         'service_3qu1a8d',
-        'template_0gja5bo',
+        'template_5p85usu',
         formData,
         'WFNw_DRrzj3oFitMU'
       )
