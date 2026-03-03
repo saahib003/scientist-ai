@@ -227,14 +227,14 @@ function UrbanAI() {
               </ul>
             </div>
             <div className="sector-media">
-              <img src="/assets/images/service/school.avif" alt="School Safety" className="sector-image" />
+              <img src="/assets/images/service/schoool.jpg" alt="School Safety" className="sector-image" />
             </div>
           </div>
 
           {/* Card 2: Roads - Right Content, Left Video */}
           <div className="sector-card sector-card-reverse slide-from-right animate-on-scroll">
             <div className="sector-media">
-              <img src="/assets/images/service/traffic.jpg" alt="School Safety" className="sector-image" />
+              <img src="/assets/images/service/tra.jpg" alt="School Safety" className="sector-image" />
             </div>
             <div className="sector-content">
               <div className="sector-icon">
@@ -288,7 +288,7 @@ function UrbanAI() {
           {/* Card 4: Hospitals - Right Content, Left Image */}
           <div className="sector-card sector-card-reverse slide-from-right animate-on-scroll">
             <div className="sector-media">
-              <img src="/assets/images/service/commercial.webp" alt="Healthcare Safety" className="sector-image" />
+              <img src="/assets/images/service/hospital.jpg" alt="School Safety" className="sector-image" />
             </div>
             <div className="sector-content">
               <div className="sector-icon">
@@ -333,7 +333,7 @@ function UrbanAI() {
               </ul>
             </div>
             <div className="sector-media">
-              <img src="/assets/images/service/commercial.webp" alt="Retail Safety" className="sector-image" />
+              <img src="/assets/images/service/mall.jpg" alt="Retail Safety" className="sector-image" />
             </div>
           </div>
         </div>

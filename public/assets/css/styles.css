@@ -4671,6 +4671,12 @@ button {
     backdrop-filter: none !important;
 }
 
+.ceo-video-container .video-placeholder {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
 .video-wrapper {
     position: relative;
     width: 100%;
@@ -4679,10 +4685,9 @@ button {
 .video-thumb {
     position: relative;
     width: 100%;
-    min-height: 500px;
     border-radius: 0;
     overflow: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .play-button {

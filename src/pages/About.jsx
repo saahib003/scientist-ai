@@ -45,7 +45,7 @@ function About() {
               <div className="video-placeholder">
                 <div className="video-wrapper">
                   <div className="video-thumb">
-                    <img src="/assets/images/team/Anurag_Image.jpg" alt="Anurag Pyriyadarshi - CEO" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px'}} />
+                    <img src="/assets/images/team/Anurag_Image.jpg" alt="Anurag Pyriyadarshi - CEO" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px 12px 0px 0px'}} />
                     {/* Video play button - commented out for future use
                     <div className="play-button">
                       <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
