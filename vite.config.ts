@@ -23,4 +23,36 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    // Enable minification
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.logs in production
+        drop_debugger: true,
+      },
+    },
+    // Code splitting for better caching
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'leaflet-vendor': ['leaflet'],
+          'emailjs-vendor': ['emailjs-com'],
+        },
+      },
+    },
+    // Chunk size warnings
+    chunkSizeWarningLimit: 1000,
+    // Enable CSS code splitting
+    cssCodeSplit: true,
+    // Source maps for debugging (disable in production for smaller size)
+    sourcemap: false,
+  },
+  // Performance optimizations
+  server: {
+    hmr: {
+      overlay: true,
+    },
+  },
 })

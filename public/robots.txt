@@ -1,0 +1,13 @@
+# Scientist Technologies - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://scientisttechnologies.vercel.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
