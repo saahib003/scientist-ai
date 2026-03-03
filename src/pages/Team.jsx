@@ -102,7 +102,7 @@ function Team() {
                 </div>
               </div>
               <h3 className="team-name">Aditi Paul</h3>
-              <p className="team-role">HR Manager</p>
+              <p className="team-role">HR & Operation Manager</p>
               <p className="team-bio">Fostering a culture of innovation and building our world-class team of experts.</p>
               <div className="team-social">
                 <a href="https://www.linkedin.com/in/aditi-paul-10002a196/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">
@@ -272,7 +272,7 @@ function Team() {
                 </div>
               </div>
               <h3 className="team-name">Nandish K</h3>
-              <p className="team-role">Transport Planning & Traffic Engineer</p>
+              <p className="team-role">Traffic Engineering Consultant</p>
               <p className="team-bio">Optimizing mobility through smart transport planning and traffic engineering.</p>
               <div className="team-social">
                 <a href="https://www.linkedin.com/in/nandish-k-53a715178/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">
