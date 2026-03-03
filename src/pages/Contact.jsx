@@ -28,10 +28,10 @@ function Contact() {
     try {
       // Configure EmailJS with your credentials
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_3qu1a8d',
+        'template_0gja5bo',
         formData,
-        'YOUR_PUBLIC_KEY'
+        'WFNw_DRrzj3oFitMU'
       )
       setStatus('success')
       setFormData({ name: '', email: '', phone: '', company: '', message: '' })
