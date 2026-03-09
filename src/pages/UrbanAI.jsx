@@ -200,6 +200,7 @@ function UrbanAI() {
       <section className="urban-sectors">
         <div className="container">
           <h2 className="urban-section-title">Safety Across All Sectors</h2>
+          <h2 className="urban-section-title">Safety Across All Sectors</h2>
           <p className="sectors-intro">
             Urban AI provides comprehensive safety and security solutions tailored for diverse environments. From educational institutions to healthcare facilities, our AI-powered surveillance ensures protection where it matters most.
           </p>
@@ -227,14 +228,20 @@ function UrbanAI() {
               </ul>
             </div>
             <div className="sector-media">
-              <img src="/assets/images/service/schoool.jpg" alt="School Safety" className="sector-image" />
+              <video className="sector-video" autoPlay loop muted playsInline>
+                <source src="/assets/videos/schoolVideo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
 
           {/* Card 2: Roads - Right Content, Left Video */}
           <div className="sector-card sector-card-reverse slide-from-right animate-on-scroll">
             <div className="sector-media">
-              <img src="/assets/images/service/tra.jpg" alt="School Safety" className="sector-image" />
+              <video className="sector-video" autoPlay loop muted playsInline>
+                <source src="/assets/videos/roadside.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
             <div className="sector-content">
               <div className="sector-icon">
@@ -281,7 +288,10 @@ function UrbanAI() {
               </ul>
             </div>
             <div className="sector-media">
-              <img src="/assets/images/service/residential.gif" alt="Residential Safety" className="sector-image" />
+              <video className="sector-video" autoPlay loop muted playsInline>
+                <source src="/assets/videos/HouseVideo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
 

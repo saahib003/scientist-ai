@@ -28,10 +28,10 @@ function Contact() {
     try {
       // Configure EmailJS with your credentials
       await emailjs.send(
-        'service_3qu1a8d',
-        'template_5p85usu',
+        'service_nkostoq',
+        'template_uti1nbx',
         formData,
-        'WFNw_DRrzj3oFitMU'
+        '0PCGNCc7iPgdyfadA'
       )
       setStatus('success')
       setFormData({ name: '', email: '', phone: '', company: '', message: '' })
@@ -168,7 +168,7 @@ function Contact() {
               {/* Email */}
               <div className="office-block">
                 <h3 className="office-title">Email-</h3>
-                <a href="mailto:team@scientisttechnologies.com" className="office-email">team@scientisttechnologies.com</a>
+                <a href="mailto:team@scientist.org.in" className="office-email">team@scientist.org.in</a>
               </div>
             </div>
 
