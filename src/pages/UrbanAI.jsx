@@ -199,10 +199,9 @@ function UrbanAI() {
       {/* Sector Applications */}
       <section className="urban-sectors">
         <div className="container">
-          <h2 className="urban-section-title">Safety Across All Sectors</h2>
-          <h2 className="urban-section-title">Safety Across All Sectors</h2>
+          <h2 className="urban-section-title">AI-Powered Video Analytics Across All Sectors</h2>
           <p className="sectors-intro">
-            Urban AI provides comprehensive safety and security solutions tailored for diverse environments. From educational institutions to healthcare facilities, our AI-powered surveillance ensures protection where it matters most.
+            Urban AI analyzes video data in real-time to provide actionable insights for safety and security. Our AI transforms raw footage into meaningful intelligence, helping organizations make data-driven decisions across diverse environments.
           </p>
 
           {/* Card 1: Schools - Left Content, Right Image */}
@@ -218,13 +217,13 @@ function UrbanAI() {
               </div>
               <h3 className="sector-title">Schools & Educational Institutions</h3>
               <p className="sector-description">
-                Ensure student safety with intelligent monitoring systems that detect unauthorized entries, monitor playground activities, and provide instant alerts during emergencies.
+                Analyze video data to identify safety patterns and generate actionable reports. Our AI processes footage to detect anomalies, track attendance, and provide administrators with data-driven insights for enhanced campus security.
               </p>
               <ul className="sector-features">
-                <li>Unauthorized entry detection</li>
-                <li>Student attendance tracking</li>
-                <li>Emergency response alerts</li>
-                <li>Playground safety monitoring</li>
+                <li>Automated incident detection & reporting</li>
+                <li>Attendance pattern analysis</li>
+                <li>Safety zone monitoring with alerts</li>
+                <li>Historical data trends & insights</li>
               </ul>
             </div>
             <div className="sector-media">
@@ -255,13 +254,13 @@ function UrbanAI() {
               </div>
               <h3 className="sector-title">Roads & Traffic Management</h3>
               <p className="sector-description">
-                Advanced traffic analysis detecting near-miss incidents, monitoring traffic flow, and preventing accidents before they happen with predictive AI.
+                Transform traffic video into actionable intelligence. Our AI analyzes vehicle movements, identifies near-miss events, and generates comprehensive reports to help authorities optimize traffic flow and prevent accidents.
               </p>
               <ul className="sector-features">
-                <li>Near-miss accident detection</li>
-                <li>Traffic flow optimization</li>
-                <li>Violation detection & alerts</li>
-                <li>Predictive accident prevention</li>
+                <li>Near-miss incident analysis & reporting</li>
+                <li>Traffic flow data visualization</li>
+                <li>Violation pattern identification</li>
+                <li>Predictive analytics for accident prevention</li>
               </ul>
             </div>
           </div>
@@ -278,13 +277,13 @@ function UrbanAI() {
               </div>
               <h3 className="sector-title">Residential Societies & Communities</h3>
               <p className="sector-description">
-                Comprehensive security for residential areas with perimeter monitoring, visitor management, and 24/7 surveillance for peace of mind.
+                Convert surveillance footage into meaningful security insights. Our AI analyzes visitor patterns, monitors perimeter activity, and provides residents with detailed reports and alerts for informed decision-making.
               </p>
               <ul className="sector-features">
-                <li>Perimeter security monitoring</li>
-                <li>Visitor management system</li>
-                <li>Suspicious activity detection</li>
-                <li>Package delivery tracking</li>
+                <li>Visitor pattern analysis & logs</li>
+                <li>Perimeter breach detection & reporting</li>
+                <li>Activity trend analysis</li>
+                <li>Automated security reports</li>
               </ul>
             </div>
             <div className="sector-media">
@@ -298,7 +297,10 @@ function UrbanAI() {
           {/* Card 4: Hospitals - Right Content, Left Image */}
           <div className="sector-card sector-card-reverse slide-from-right animate-on-scroll">
             <div className="sector-media">
-              <img src="/assets/images/service/hospital.jpg" alt="School Safety" className="sector-image" />
+              <video className="sector-video" autoPlay loop muted playsInline>
+                <source src="/assets/videos/hospital.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
             <div className="sector-content">
               <div className="sector-icon">
@@ -311,13 +313,13 @@ function UrbanAI() {
               </div>
               <h3 className="sector-title">Hospitals & Healthcare Facilities</h3>
               <p className="sector-description">
-                Patient safety monitoring, restricted area access control, and emergency detection systems designed for healthcare environments.
+                Analyze healthcare facility video data to enhance patient safety and operational efficiency. Our AI processes footage to identify access violations, track movement patterns, and generate compliance reports.
               </p>
               <ul className="sector-features">
-                <li>Patient safety monitoring</li>
-                <li>Restricted area access control</li>
-                <li>Emergency detection & alerts</li>
-                <li>Staff & visitor tracking</li>
+                <li>Patient movement analysis & alerts</li>
+                <li>Restricted area access monitoring</li>
+                <li>Emergency event detection & logging</li>
+                <li>Staff workflow optimization insights</li>
               </ul>
             </div>
           </div>
@@ -333,17 +335,20 @@ function UrbanAI() {
               </div>
               <h3 className="sector-title">Commercial & Retail Spaces</h3>
               <p className="sector-description">
-                Smart surveillance for retail and commercial spaces with crowd management, theft prevention, and customer safety analytics.
+                Extract valuable business intelligence from retail video data. Our AI analyzes customer behavior, monitors crowd density, and generates actionable insights to optimize operations and enhance security.
               </p>
               <ul className="sector-features">
-                <li>Crowd density monitoring</li>
-                <li>Theft & shoplifting detection</li>
-                <li>Customer behavior analytics</li>
-                <li>Emergency evacuation support</li>
+                <li>Customer behavior analytics & heatmaps</li>
+                <li>Crowd density analysis & forecasting</li>
+                <li>Theft pattern identification</li>
+                <li>Operational efficiency reports</li>
               </ul>
             </div>
             <div className="sector-media">
-              <img src="/assets/images/service/mall.jpg" alt="Retail Safety" className="sector-image" />
+              <video className="sector-video" autoPlay loop muted playsInline>
+                <source src="/assets/videos/industries.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
