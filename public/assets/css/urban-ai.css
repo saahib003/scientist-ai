@@ -449,6 +449,37 @@
     position: relative;
 }
 
+.video-logo-overlay {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.video-logo {
+    height: 64px;
+    width: auto;
+    display: block;
+    opacity: 0.8;
+}
+
+/* Responsive logo size for smaller screens */
+@media (max-width: 768px) {
+    .video-logo {
+        height: 32px;
+    }
+    
+    .video-logo-overlay {
+        bottom: 12px;
+        right: 12px;
+        padding: 6px 10px;
+    }
+}
+
 .sector-image {
     width: 100%;
     height: 100%;

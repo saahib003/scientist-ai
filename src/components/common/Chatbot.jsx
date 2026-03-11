@@ -81,7 +81,7 @@ const chatbotData = {
       id: 'demo',
       question: 'Can we do a demo or discovery call?',
       keywords: ['demo', 'call', 'meeting', 'schedule', 'discovery', 'consultation'],
-      answer: 'Yes. We\'d be happy to schedule a call with you.<br><br>Contact us:<br><br>📧 Email: <a href="mailto:team@scientisttechnologies.com">team@scientisttechnologies.com</a><br><br>🌐 Website: Schedule directly through our contact page',
+      answer: 'Yes. We\'d be happy to schedule a call with you.<br><br>Contact us:<br><br>📧 Email: <a href="mailto:team@scientist.org.in">team@scientist.org.in</a><br><br>🌐 Website: Schedule directly through our contact page',
       followUps: []
     }
   ]

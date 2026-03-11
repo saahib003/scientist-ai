@@ -207,30 +207,34 @@ function UrbanAI() {
           {/* Card 1: Schools - Left Content, Right Image */}
           <div className="sector-card slide-from-left animate-on-scroll">
             <div className="sector-content">
-              <div className="sector-icon">
+              {/* <div className="sector-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                   <path d="M9 6h6"></path>
                   <path d="M9 9h6"></path>
                 </svg>
-              </div>
+              </div> */}
               <h3 className="sector-title">Schools & Educational Institutions</h3>
               <p className="sector-description">
-                Analyze video data to identify safety patterns and generate actionable reports. Our AI processes footage to detect anomalies, track attendance, and provide administrators with data-driven insights for enhanced campus security.
+                Analyze classroom interactions to evaluate teaching effectiveness and student engagement. Our AI models process video data to understand instructional patterns, measure student response, and generate actionable insights that help improve learning outcomes and teaching quality.
               </p>
               <ul className="sector-features">
-                <li>Automated incident detection & reporting</li>
-                <li>Attendance pattern analysis</li>
-                <li>Safety zone monitoring with alerts</li>
-                <li>Historical data trends & insights</li>
+                <li>Analyzes teacher instructional style and engagement</li>
+                {/* <li>Detects student attention, interaction, and comprehension</li> */}
+                <li>Measures teaching effectiveness using behavioral signals</li>
+                <li>Generates data-driven insights to improve learning outcomes</li>
+                <li>Provides objective scoring of teaching performance</li>
               </ul>
             </div>
             <div className="sector-media">
               <video className="sector-video" autoPlay loop muted playsInline>
-                <source src="/assets/videos/schoolVideo.mp4" type="video/mp4" />
+                <source src="/assets/videos/schoolClassRoom.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              <div className="video-logo-overlay">
+                <img src="/assets/images/favicon.png" alt="Scientist Technologies" className="video-logo" />
+              </div>
             </div>
           </div>
 
@@ -238,12 +242,15 @@ function UrbanAI() {
           <div className="sector-card sector-card-reverse slide-from-right animate-on-scroll">
             <div className="sector-media">
               <video className="sector-video" autoPlay loop muted playsInline>
-                <source src="/assets/videos/roadside.mp4" type="video/mp4" />
+                <source src="/assets/videos/RoadSafety.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              <div className="video-logo-overlay">
+                <img src="/assets/images/favicon.png" alt="Scientist Technologies" className="video-logo" />
+              </div>
             </div>
             <div className="sector-content">
-              <div className="sector-icon">
+              {/* <div className="sector-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="12" cy="12" r="10"></circle>
                   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
@@ -251,7 +258,7 @@ function UrbanAI() {
                   <path d="M8 3h8"></path>
                   <path d="M3 8h18"></path>
                 </svg>
-              </div>
+              </div> */}
               <h3 className="sector-title">Roads & Traffic Management</h3>
               <p className="sector-description">
                 Transform traffic video into actionable intelligence. Our AI analyzes vehicle movements, identifies near-miss events, and generates comprehensive reports to help authorities optimize traffic flow and prevent accidents.
@@ -261,6 +268,7 @@ function UrbanAI() {
                 <li>Traffic flow data visualization</li>
                 <li>Violation pattern identification</li>
                 <li>Predictive analytics for accident prevention</li>
+                <li>Real-time dashboard for traffic authorities</li>
               </ul>
             </div>
           </div>
@@ -268,13 +276,13 @@ function UrbanAI() {
           {/* Card 3: Residential - Left Content, Right Image */}
           <div className="sector-card slide-from-left animate-on-scroll">
             <div className="sector-content">
-              <div className="sector-icon">
+              {/* <div className="sector-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                   <circle cx="12" cy="8" r="1"></circle>
                 </svg>
-              </div>
+              </div> */}
               <h3 className="sector-title">Residential Societies & Communities</h3>
               <p className="sector-description">
                 Convert surveillance footage into meaningful security insights. Our AI analyzes visitor patterns, monitors perimeter activity, and provides residents with detailed reports and alerts for informed decision-making.
@@ -284,13 +292,17 @@ function UrbanAI() {
                 <li>Perimeter breach detection & reporting</li>
                 <li>Activity trend analysis</li>
                 <li>Automated security reports</li>
+                <li>24/7 monitoring with instant notifications</li>
               </ul>
             </div>
             <div className="sector-media">
               <video className="sector-video" autoPlay loop muted playsInline>
-                <source src="/assets/videos/HouseVideo.mp4" type="video/mp4" />
+                <source src="/assets/videos/HouseVideo_Com.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              <div className="video-logo-overlay">
+                <img src="/assets/images/favicon.png" alt="Scientist Technologies" className="video-logo" />
+              </div>
             </div>
           </div>
 
@@ -298,19 +310,22 @@ function UrbanAI() {
           <div className="sector-card sector-card-reverse slide-from-right animate-on-scroll">
             <div className="sector-media">
               <video className="sector-video" autoPlay loop muted playsInline>
-                <source src="/assets/videos/hospital.mp4" type="video/mp4" />
+                <source src="/assets/videos/hospital_com.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              <div className="video-logo-overlay">
+                <img src="/assets/images/favicon.png" alt="Scientist Technologies" className="video-logo" />
+              </div>
             </div>
             <div className="sector-content">
-              <div className="sector-icon">
+              {/* <div className="sector-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                   <circle cx="12" cy="12" r="1"></circle>
                   <path d="M12 2v4"></path>
                   <path d="M12 18v4"></path>
                 </svg>
-              </div>
+              </div> */}
               <h3 className="sector-title">Hospitals & Healthcare Facilities</h3>
               <p className="sector-description">
                 Analyze healthcare facility video data to enhance patient safety and operational efficiency. Our AI processes footage to identify access violations, track movement patterns, and generate compliance reports.
@@ -320,6 +335,7 @@ function UrbanAI() {
                 <li>Restricted area access monitoring</li>
                 <li>Emergency event detection & logging</li>
                 <li>Staff workflow optimization insights</li>
+                <li>HIPAA-compliant data handling</li>
               </ul>
             </div>
           </div>
@@ -327,12 +343,12 @@ function UrbanAI() {
           {/* Card 5: Commercial - Left Content, Right Image */}
           <div className="sector-card slide-from-left animate-on-scroll">
             <div className="sector-content">
-              <div className="sector-icon">
+              {/* <div className="sector-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-              </div>
+              </div> */}
               <h3 className="sector-title">Commercial & Retail Spaces</h3>
               <p className="sector-description">
                 Extract valuable business intelligence from retail video data. Our AI analyzes customer behavior, monitors crowd density, and generates actionable insights to optimize operations and enhance security.
@@ -342,13 +358,17 @@ function UrbanAI() {
                 <li>Crowd density analysis & forecasting</li>
                 <li>Theft pattern identification</li>
                 <li>Operational efficiency reports</li>
+                <li>ROI-driven insights for business growth</li>
               </ul>
             </div>
             <div className="sector-media">
               <video className="sector-video" autoPlay loop muted playsInline>
-                <source src="/assets/videos/industries.mp4" type="video/mp4" />
+                <source src="/assets/videos/industries_Com.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              <div className="video-logo-overlay">
+                <img src="/assets/images/favicon.png" alt="Scientist Technologies" className="video-logo" />
+              </div>
             </div>
           </div>
         </div>
